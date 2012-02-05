@@ -1,0 +1,13 @@
+//
+//  PMUtility.h
+//  PMUtility
+//
+//  Created by Dave Carlton on 02/05/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface PMUtility : NSObject
+
+@end
