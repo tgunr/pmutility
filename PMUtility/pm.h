@@ -1,5 +1,5 @@
 /*
- *  pms.h
+ *  pm.h
  *
  *  Created by Dave Carlton on 05/27/08.
  *  Copyright 2008 Polymicro Systems. All rights reserved.

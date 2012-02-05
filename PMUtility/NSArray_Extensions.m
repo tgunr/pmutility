@@ -43,8 +43,8 @@
 */
 
 #import "NSArray_Extensions.h"
-#import "pmsCFUtility.h"
-#import "pmsNSUtility.h"
+#import "pmCFUtility.h"
+#import "pmNSUtility.h"
 
 @implementation NSArray (PMSExtensions)
 
@@ -108,7 +108,6 @@
 		}
 	
 		outArray = [NSArray arrayWithArray:workArray];
-		[workArray release];
 	}
 	
 	return outArray;

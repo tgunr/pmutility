@@ -1,28 +1,28 @@
 //
-//  PMSUtility.h
-//  PMSUtility
+//  PMUtility.h
+//  PMUtility
 //
 //  Created by Dave Carlton on 02/05/12.
 //  Copyright (c) 2012 Polymicro Systems. All rights reserved.
 //
 
-#ifndef PMSUtility_PMSUtility_h
-#define PMSUtility_PMSUtility_h
+#ifndef PMUtility_PMUtility_h
+#define PMUtility_PMUtility_h
 
-#import <PMSUtility/pms.h>
-#import <PMSUtility/pmsCFUtility.h>
-#import <PMSUtility/pmsNSUtility.h>
-#import <PMSUtility/BTHIconResources.h>
-#import <PMSUtility/ImageAndTextCell.h>
-#import <PMSUtility/NSDate_Extension.h>
-#import <PMSUtility/NSApplication_Extension.h>
-#import <PMSUtility/NSArray_Extension.h>
-#import <PMSUtility/NSData_Extension.h>
-#import <PMSUtility/NSOutlineView_Extension.h>
-#import <PMSUtility/NSSlider_Extension.h>
-#import <PMSUtility/NSString_Extension.h>
-#import <PMSUtility/NSViewController.h>
-#import <PMSUtility/NSMutableArray_Extension.h>
-#import <PMSUtility/NSDictionary_Extension.h>
-#import <PMSUtility/NSNumber_Extension.h>
+#import <PMUtility/pm.h>
+#import <PMUtility/PMCFUtility.h>
+#import <PMUtility/pmNSUtility.h>
+#import <PMUtility/BTHIconResources.h>
+#import <PMUtility/ImageAndTextCell.h>
+#import <PMUtility/NSDate_Extension.h>
+#import <PMUtility/NSApplication_Extension.h>
+#import <PMUtility/NSArray_Extension.h>
+#import <PMUtility/NSData_Extension.h>
+#import <PMUtility/NSOutlineView_Extension.h>
+#import <PMUtility/NSSlider_Extension.h>
+#import <PMUtility/NSString_Extension.h>
+#import <PMUtility/NSViewController.h>
+#import <PMUtility/NSMutableArray_Extension.h>
+#import <PMUtility/NSDictionary_Extension.h>
+#import <PMUtility/NSNumber_Extension.h>
 #endif

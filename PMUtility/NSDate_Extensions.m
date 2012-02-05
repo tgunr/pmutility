@@ -6,8 +6,8 @@
 //
 
 #import "NSDate_Extensions.h"
-#import "pmsCFUtility.h"
-#import "pmsNSUtility.h"
+#import "PMCFUtility.h"
+#import "pmNSUtility.h"
 
 const	time_t	kTimeOneDayInSeconds = 86400.0f;
 
@@ -85,7 +85,7 @@ const	time_t	kTimeOneDayInSeconds = 86400.0f;
 
 -(float)rankWithDate:(id)other withOptions:(NSMutableDictionary*)options
 {
-	CFDateRef	ourDate = (CFDateRef)self;
+	CFDateRef	ourDate = (__bridge CFDateRef)self;
 	
 	CFAbsoluteTime  distantTime = (ourDate!=NULL) ? CFDateGetAbsoluteTime(ourDate) : 0.0;
 	CFAbsoluteTime	anchorTime = 0.0;
@@ -124,4 +124,4 @@ const	time_t	kTimeOneDayInSeconds = 86400.0f;
 }
 
 
-@end		//NSDate(MyExtensions)
+@end		//NSDate(PMExtension)

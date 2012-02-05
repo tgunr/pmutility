@@ -1,12 +1,12 @@
 /*
- *  pmsCFUtility.c
+ *  pmCFUtility.c
  *
  *  Created by PolyMicro Systems on 7/16/08.
  *  Copyright 2008 polyMicro Systems. All rights reserved.
  *
  */
 
-#import "pmsCFUtility.h"
+#import "pmCFUtility.h"
 #include <sys/xattr.h>
 #include <sys/stat.h>
 #include <sys/errno.h>

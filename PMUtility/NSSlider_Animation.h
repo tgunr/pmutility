@@ -7,11 +7,11 @@
 
 // See legal notice below.
 
-#ifdef PMSUTILITY
+#ifdef PMUtility
 #import <Cocoa/Cocoa.h>
 #endif
 
-#ifdef PMSUTILITYIOS
+#ifdef PMUtilityIOS
 #import <UIKit/UIKit.h>
 #endif
 

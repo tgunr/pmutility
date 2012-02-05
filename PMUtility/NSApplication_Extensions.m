@@ -5,8 +5,8 @@
 //  Copyright 2008 PolyMicro Systems. All rights reserved.
 //
 
-#import <PMSUtility/NSApplication_Extensions.h>
-#import "pmsCFUtility.h"
+#import <PMUtility/NSApplication_Extensions.h>
+#import "PMCFUtility.h"
 
 @implementation NSApplication(PMSExtensions)
 

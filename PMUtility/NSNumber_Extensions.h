@@ -1,6 +1,6 @@
 //
 //  NSNumber_Extensions.h
-//  PMSUtility
+//  PMUtility
 //
 //  Created by Dave Carlton on 08/01/11.
 //  Copyright 2011 Polymicro Systems. All rights reserved.

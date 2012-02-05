@@ -1,6 +1,6 @@
 //
 //  NSMutableArray_Extensions.m
-//  pmsutility
+//  PMUtility
 //
 //  Created by Dave Carlton on 07/20/11.
 //  Copyright 2011 Polymicro Systems. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "NSMutableArray_Extensions.h"
 
-@implementation NSMutableArray (MyExtensions)
+@implementation NSMutableArray (PMExtension)
 
 -(void)insertObjectsFromArray:(NSArray *)array atIndex:(NSInteger)index
 {
@@ -45,5 +45,5 @@
 -(id)addUniqueObjectsFromArray:(NSArray*)newArray
 { return [self insertUniqueObjectsFromArray:newArray atIndex:[self count]]; }
 
-@end		//	NSMutableArray (MyExtensions)
+@end		//	NSMutableArray (PMExtension)
 

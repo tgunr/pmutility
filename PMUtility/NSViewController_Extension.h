@@ -6,7 +6,7 @@
 //  Copyright 2010 PolyMicro Systems. All rights reserved.
 //
 
-#ifdef PMSUTILITY
+#ifdef PMUtility
 #import <Cocoa/Cocoa.h>
 
 @interface NSViewController (MyViewControllerExtensions) 
@@ -16,7 +16,7 @@
 
 #endif
 
-#ifdef PMSUTILITYIOS
+#ifdef PMUtilityIOS
 #import <UIKit/UIKit.h>
 #endif
 

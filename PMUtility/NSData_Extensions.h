@@ -6,11 +6,11 @@
 //  Copyright 2008 PolyMicro Systems. All rights reserved.
 //
 
-#ifdef PMSUTILITY
+#ifdef PMUtility
 #import <Cocoa/Cocoa.h>
 #endif
 
-#ifdef PMSUTILITYIOS
+#ifdef PMUtilityIOS
 #import <UIKit/UIKit.h>
 #endif
 

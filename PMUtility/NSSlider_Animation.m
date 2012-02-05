@@ -41,7 +41,7 @@ static NSMutableDictionary *animationTimersDictionary;  //This is where we keep 
 + (NSMutableDictionary *) animationTimersDictionary	
 	{
 	if (!animationTimersDictionary)   // Create the dictionary if we haven't already.
-		animationTimersDictionary = [[NSMutableDictionary dictionary] retain];
+		animationTimersDictionary = [NSMutableDictionary dictionary];
 	return animationTimersDictionary;
 	}
 	

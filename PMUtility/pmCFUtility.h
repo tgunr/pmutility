@@ -1,5 +1,5 @@
 /*
- *  pmsCFUtility.h
+ *  pmCFUtility.h
  *
  *  Created by PolyMicro Systems on 7/16/08.
  *  Copyright 2008 Polymicrosystems. All rights reserved.

@@ -100,7 +100,7 @@
 							align: (IconAlignmentType) alignment transform: (IconTransformType) transformation
 					usingRGBcolor: (RGBColor *) labelColor
 {
-	NSMutableArray * result = [[[NSMutableArray alloc] init] autorelease];
+	NSMutableArray * result = [[NSMutableArray alloc] init];
 	unsigned int iconSizesToMake = 128; //A bitflag that has the set bits correspond to the size.
 
 	AcquireIconRef(icon);
@@ -135,11 +135,11 @@
 	while (iconSizesToMake != 0) {
 		if (iconSizesToMake & currentIcon) {
 			[result addObject:
-				[[[NSBitmapImageRep alloc]
+				[[NSBitmapImageRep alloc]
 					initWithIconRef:icon width:currentIcon height:currentIcon
 							  align: alignment transform: transformation
 					  usingRGBcolor: labelColor
-					] autorelease]];
+					]];
 			iconSizesToMake &= ~currentIcon;
 		}
 		currentIcon = currentIcon << 1;
@@ -208,8 +208,8 @@
 		return nil;
 	}
 
-	NSImage *image = [[[NSImage alloc] initWithIconRef:icon
-				style:transformation tinting:customTint] autorelease];
+	NSImage *image = [[NSImage alloc] initWithIconRef:icon
+				style:transformation tinting:customTint];
 	ReleaseIconRef(icon);
 	return image;
 }
@@ -227,8 +227,8 @@
 		return nil;
 	}
 
-	NSImage *image = [[[NSImage alloc] initWithIconRef:icon
-				style:transformation tinting:customTint] autorelease];
+	NSImage *image = [[NSImage alloc] initWithIconRef:icon
+				style:transformation tinting:customTint];
 	ReleaseIconRef(icon);
 	return image;
 }

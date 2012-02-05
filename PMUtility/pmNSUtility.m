@@ -1,12 +1,12 @@
 //
-//  pmsNSUtility.m
+//  pmNSUtility.m
 //  PDFGarden
 //
 //  Created by Dave Carlton on 09/24/10.
 //  Copyright 2010 PolyMicro Systems. All rights reserved.
 //
 
-#import "pmsNSUtility.h"
+#import "pmNSUtility.h"
 
 #define QUERY_DO(query) static NSString *query = @""
 #define QUERY_END @"";

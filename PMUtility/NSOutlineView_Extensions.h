@@ -6,15 +6,15 @@
 //  Copyright (c) 2010 PolyMicro Systems. All rights reserved.
 //
  
-#ifdef PMSUTILITY
+#ifdef PMUtility
 #import <Cocoa/Cocoa.h>
 #endif
 
-#ifdef PMSUTILITYIOS
+#ifdef PMUtilityIOS
 #import <UIKit/UIKit.h>
 #endif
  
-@interface NSOutlineView (MyExtensions)
+@interface NSOutlineView (PMExtension)
  
 - (NSArray*)allSelectedItems;
 - (void)selectItems:(NSArray*)items byExtendingSelection:(BOOL)extend;

@@ -1,5 +1,5 @@
 //
-//  pmsNSUtility.h
+//  pmNSUtility.h
 //  PDFGarden
 //
 //  Created by Dave Carlton on 09/24/10.

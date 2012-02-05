@@ -1,5 +1,5 @@
 /*
- *  pms.m
+ *  pm.m
  *
  *  Created by Dave Carlton on 10/12/09.
  *  Copyright 2009 PolyMicro Systems. All rights reserved.
@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <sys/time.h>
-#include "pms.h"
+#include "pm.h"
 
 int				gDebugLevel = 1;
 int				gVerboseIndex = 0;
