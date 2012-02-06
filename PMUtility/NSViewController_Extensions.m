@@ -8,7 +8,7 @@
 #ifdef PMUtility
 #import "NSViewController.h"
 
-@implementation NSViewController (MyViewControllerExtensions) 
+@implementation NSViewController (PMViewControllerExtensions) 
 
 @end
 #endif

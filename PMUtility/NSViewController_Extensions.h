@@ -9,7 +9,7 @@
 #ifdef PMUtility
 #import <Cocoa/Cocoa.h>
 
-@interface NSViewController (MyViewControllerExtensions) 
+@interface NSViewController (PMViewControllerExtensions) 
 
 
 @end
