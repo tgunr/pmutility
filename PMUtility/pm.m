@@ -11,18 +11,18 @@
 #include <sys/time.h>
 #include "pm.h"
 
-int				gDebugLevel = 1;
+int				gDebugLevel = 0;
 int				gVerboseIndex = 0;
 Boolean			gVerboseStack[256];
 UInt64			startTime = 0;
 
 // PMLOGSetVerbose sets a new debug level
-void pmLOGSetVerbose(Boolean value) 
+void pmLOGSetVerbose(int value) 
     { gDebugLevel = value; }
 
 // PMLOGPushVerbose sets a new debug setting and saves the previous one
 // Use this to reduce debug output inside loops etc.
-void pmLOGPushVerbose(Boolean value) {
+void pmLOGPushVerbose(int value) {
 	gVerboseStack[gVerboseIndex] = gDebugLevel;
 	gVerboseIndex++;
 	if (gVerboseIndex > 256)
