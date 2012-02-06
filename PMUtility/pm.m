@@ -17,12 +17,12 @@ Boolean			gVerboseStack[256];
 UInt64			startTime = 0;
 
 // PMLOGSetVerbose sets a new debug level
-void PMLOGSetVerbose(Boolean value) 
+void pmLOGSetVerbose(Boolean value) 
     { gDebugLevel = value; }
 
 // PMLOGPushVerbose sets a new debug setting and saves the previous one
 // Use this to reduce debug output inside loops etc.
-void PMLOGPushVerbose(Boolean value) {
+void pmLOGPushVerbose(Boolean value) {
 	gVerboseStack[gVerboseIndex] = gDebugLevel;
 	gVerboseIndex++;
 	if (gVerboseIndex > 256)
@@ -31,7 +31,7 @@ void PMLOGPushVerbose(Boolean value) {
 }
 
 // PMLOGPopVerbose restores the previous debug setting
-void PMLOGPopVerbose(void) {
+void pmLOGPopVerbose(void) {
 	gVerboseIndex--;
 	if (gVerboseIndex < 0)
 		gVerboseIndex = 0;
@@ -39,7 +39,7 @@ void PMLOGPopVerbose(void) {
 }
 
 static NSString* 
-_PMLOGFormat(id self, NSString * prefix, NSString * format) {
+pmLOGFormat(id self, NSString * prefix, NSString * format) {
 	if(self != nil)
 	{
 		return [NSString stringWithFormat:@"%@ self(%@) %@", prefix, self, format];
@@ -50,16 +50,16 @@ _PMLOGFormat(id self, NSString * prefix, NSString * format) {
 	}
 }
 
-void _PMLOGSELF(id self, NSString * format, ...)
+void pmLOGSELF(id self, NSString * format, ...)
 {
-	NSString * finalFormat = _PMLOGFormat(self, @"PMLOG", format);
+	NSString * finalFormat = pmLOGFormat(self, @"PMLOG", format);
 	va_list ap;
 	va_start(ap, format);
 	NSLogv(finalFormat, ap);
 	va_end(ap);
 }
 
-void _PMMSG(const char *function,  int inLevel, NSString * format, ...)
+void pmMSG(const char *function,  int inLevel, NSString * format, ...)
 {
     if( inLevel > gDebugLevel || inLevel == 0 )
     {
@@ -80,7 +80,7 @@ void _PMMSG(const char *function,  int inLevel, NSString * format, ...)
     }
 }
 
-void _PMLOG(const char *file, const char *function,  int inLevel, NSString * format, ...)
+void pmLOG(const char *file, const char *function,  int inLevel, NSString * format, ...)
 {
     if( inLevel > gDebugLevel || inLevel == 0 )
     {
@@ -103,7 +103,7 @@ void _PMLOG(const char *file, const char *function,  int inLevel, NSString * for
     }
 }
 
-void _PMERR(const char *file, const char *function, int err, NSString * format, ...) {
+void pmERR(const char *file, const char *function, int err, NSString * format, ...) {
 	NSString *		pathString = [NSString stringWithCString:file encoding:NSUTF8StringEncoding];
 	const char *	fileString = [[pathString lastPathComponent] cStringUsingEncoding: NSUTF8StringEncoding];
 	NSString *		finalFormat =  [NSString stringWithFormat:@"PMLOG %s: %s: %@ - err: %x", fileString, function, format, err];
