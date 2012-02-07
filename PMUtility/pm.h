@@ -31,7 +31,7 @@ void pmMSG(const char *function,  int inLevel, NSString * format, ...);
 #define PMERR(err, ...) if (err) pmERR(__FILE__, __PRETTY_FUNCTION__, (int)err, __VA_ARGS__)
 #define PMSYM(symbol) pmLOG(1, @#symbol ": %@", symbol)
 #define PMNOTE(note) pmLOG(1, note)
-#define PMHERE pmLOG(1, @"")
+#define PMHERE pmLOG(__FILE__, __PRETTY_FUNCTION__, 1, @"")
 #define PMMSG(...) pmMSG(__PRETTY_FUNCTION__, __VA_ARGS__)
 
 #define RELEASENIL(var) [var release]; var = 0;
