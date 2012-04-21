@@ -47,7 +47,7 @@
 //But for the sake of consistency, it should come from NSWorkspace instead
 //Actually, is it? Well, iconref comes from NSImage. Just so Imagereps don't have to be touched.
 @interface NSImage (IconRef)
-- (id) initWithIconRef:(IconRef) icon;
+//- (id) initWithIconRef:(IconRef) icon;
 - (id) initWithIconRef:(IconRef) icon style: (IconTransformType) transformation tinting: (NSColor *) customTint;
 //- (id) initWithIconRef:(IconRef) icon style: (IconTransformType) transformation tinting: (NSColor *) customTint
 //					iconBadgeRef: (IconRef)badgeIcon	align: (IconAlignmentType)badgeAlignment;

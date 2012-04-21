@@ -153,10 +153,10 @@
 @end
 
 @implementation NSImage (IconRef)
-- (id) initWithIconRef:(IconRef) icon {
-	return [self initWithIconRef:icon
-				style:kTransformNone tinting:NULL];
-}
+//- (id) initWithIconRef:(IconRef) icon {
+//	return [self initWithIconRef:icon
+//				style:kTransformNone tinting:NULL];
+//}
 
 - (id) initWithIconRef:(IconRef) icon
 					style: (IconTransformType) transformation
