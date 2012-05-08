@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751186CA1559A17900D064F2 /* pm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22714DF29E000613F39 /* pm.m */; };
 		7535D1D314DF240C00613F39 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D1D214DF240C00613F39 /* Cocoa.framework */; };
 		7535D1DD14DF240C00613F39 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7535D1DB14DF240C00613F39 /* InfoPlist.strings */; };
 		7535D1E814DF24AA00613F39 /* pmUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 7535D1E714DF24AA00613F39 /* pmUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		751186B91559A0E700D064F2 /* libpmutilitylib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpmutilitylib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7535D1CF14DF240C00613F39 /* PMUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PMUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7535D1D214DF240C00613F39 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7535D1D514DF240C00613F39 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -96,6 +98,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		751186B61559A0E700D064F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7535D1CB14DF240C00613F39 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -125,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				7535D1CF14DF240C00613F39 /* PMUtility.framework */,
+				751186B91559A0E700D064F2 /* libpmutilitylib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,6 +222,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		751186B71559A0E700D064F2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7535D1CC14DF240C00613F39 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,6 +256,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		751186B81559A0E700D064F2 /* pmutilitylib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 751186BC1559A0E700D064F2 /* Build configuration list for PBXNativeTarget "pmutilitylib" */;
+			buildPhases = (
+				751186B51559A0E700D064F2 /* Sources */,
+				751186B61559A0E700D064F2 /* Frameworks */,
+				751186B71559A0E700D064F2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pmutilitylib;
+			productName = pmutilitylib;
+			productReference = 751186B91559A0E700D064F2 /* libpmutilitylib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		7535D1CE14DF240C00613F39 /* PMUtility */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7535D1E414DF240C00613F39 /* Build configuration list for PBXNativeTarget "PMUtility" */;
@@ -278,6 +312,7 @@
 			projectRoot = "";
 			targets = (
 				7535D1CE14DF240C00613F39 /* PMUtility */,
+				751186B81559A0E700D064F2 /* pmutilitylib */,
 			);
 		};
 /* End PBXProject section */
@@ -294,6 +329,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		751186B51559A0E700D064F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				751186CA1559A17900D064F2 /* pm.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7535D1CA14DF240C00613F39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -331,6 +374,27 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		751186BA1559A0E700D064F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = ../build;
+			};
+			name = Debug;
+		};
+		751186BB1559A0E700D064F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = ../build;
+			};
+			name = Release;
+		};
 		7535D1E214DF240C00613F39 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -355,7 +419,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_OPENMP_FLAGS = "-fopenmp";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = "-lcrypto";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -378,7 +441,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_OPENMP_FLAGS = "-fopenmp";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = "-lcrypto";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -393,6 +455,7 @@
 				GCC_PREFIX_HEADER = "PMUtility/PMUtility-Prefix.pch";
 				INFOPLIST_FILE = "PMUtility/PMUtility-Info.plist";
 				INSTALL_PATH = "@rpath";
+				OTHER_LDFLAGS = "-lcrypto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYMROOT = ../build;
 				WRAPPER_EXTENSION = framework;
@@ -409,6 +472,7 @@
 				GCC_PREFIX_HEADER = "PMUtility/PMUtility-Prefix.pch";
 				INFOPLIST_FILE = "PMUtility/PMUtility-Info.plist";
 				INSTALL_PATH = "@rpath";
+				OTHER_LDFLAGS = "-lcrypto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYMROOT = ../build;
 				WRAPPER_EXTENSION = framework;
@@ -418,6 +482,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		751186BC1559A0E700D064F2 /* Build configuration list for PBXNativeTarget "pmutilitylib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				751186BA1559A0E700D064F2 /* Debug */,
+				751186BB1559A0E700D064F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		7535D1C814DF240C00613F39 /* Build configuration list for PBXProject "PMUtility" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

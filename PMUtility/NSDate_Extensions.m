@@ -29,7 +29,7 @@ const	time_t	kTimeOneDayInSeconds = 86400.0f;
 	if( [lowDate compare:hiDate] != NSOrderedAscending )
 	{
 		lowDate = endDate;
-		endDate = startDate;
+//		endDate = startDate;
 	}
 	
 	if( [self compare:lowDate] != NSOrderedAscending )

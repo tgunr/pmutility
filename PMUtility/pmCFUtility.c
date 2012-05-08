@@ -461,7 +461,7 @@ CFDateRef	CFURLCopyDateCreated( CFAllocatorRef inAllocator, CFURLRef url, SInt32
         }
     } else {
         fileExists = true;
-        isDirectory = ((statBuf.st_mode & S_IFMT) == S_IFDIR);
+        //        isDirectory = ((statBuf.st_mode & S_IFMT) == S_IFDIR);
     }
 	
 	if (fileExists)
@@ -504,7 +504,7 @@ CFDateRef	CFURLCopyDateAccessed( CFAllocatorRef inAllocator, CFURLRef url, SInt3
         }
     } else {
         fileExists = true;
-        isDirectory = ((statBuf.st_mode & S_IFMT) == S_IFDIR);
+//        isDirectory = ((statBuf.st_mode & S_IFMT) == S_IFDIR);
     }
 	
 	if (fileExists)
@@ -653,13 +653,14 @@ CFStringRef	CFDataCreateHexString( CFAllocatorRef inAllocator, CFDataRef inData 
 	unsigned int		myIndex;
 	CFMutableStringRef	workString = CFStringCreateMutable( inAllocator, myLength*2+1 );
 	
-	if( workString == NULL ) return outString;
+	if( workString == NULL ) 
+        return NULL;
 	
 	for (myIndex = 0; myIndex < myLength; myIndex++ )
 		CFStringAppendFormat( workString, NULL, CFSTR("%02x"), myBytes[myIndex] );
 	
 	outString = CFStringCreateCopy( inAllocator, workString );
-	
+	CFRelease(workString);
 	CFRelease( outString );
 	return outString;
 }

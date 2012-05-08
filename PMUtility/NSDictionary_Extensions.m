@@ -29,7 +29,8 @@
 			[infoString appendString:[(__bridge NSString*)CFUUIDCreateString(kCFAllocatorDefault,(__bridge CFUUIDRef)infoItem) md5String]];
 		else if( CFGetTypeID((__bridge CFTypeRef)infoItem) == CFURLGetTypeID() )
 			[infoString appendString:[(__bridge NSString*)CFURLGetString((__bridge CFURLRef)infoItem) md5String]];
-		else [infoString appendString:[infoItem md5String]];
+		else 
+            [infoString appendString:[infoItem md5String]];
 		[infoString appendString:[infoKey md5String]];
 	}
     

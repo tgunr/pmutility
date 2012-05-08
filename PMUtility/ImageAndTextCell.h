@@ -19,7 +19,7 @@ enum {
 @private
     NSImage *image;
 	BOOL	busy;
-	BOOL	busyBody;
+//	BOOL	busyBody;
 	NSInteger busyCount;
 }
 

@@ -279,8 +279,12 @@ OSStatus GetIconRefFromUTI(CFStringRef typeIdent, IconRef * outIconRef){
 		NSData * cachedResult = [NSData dataWithBytes:outIconRef length:sizeof(IconRef)];
 		[iconRefFromUTIDict setObject:cachedResult forKey: (__bridge id)typeIdent];
 	}
-	CFRelease(ourMimeType);
-	CFRelease(ourFileExtension);
+    if (ourMimeType) {
+        CFRelease(ourMimeType);
+    }
+    if (ourFileExtension) {
+        CFRelease(ourFileExtension);
+    }
 	return err;
 }
 
