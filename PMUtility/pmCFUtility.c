@@ -442,7 +442,7 @@ CFDateRef	CFURLCopyDateCreated( CFAllocatorRef inAllocator, CFURLRef url, SInt32
 	CFDateRef	outDate = (CFDateRef)NULL;
 	
 	Boolean		fileExists = FALSE;
-    Boolean		isDirectory = FALSE;
+//    Boolean		isDirectory = FALSE;
 		
     struct stat		statBuf;
     char			path[4096];
@@ -485,7 +485,7 @@ CFDateRef	CFURLCopyDateAccessed( CFAllocatorRef inAllocator, CFURLRef url, SInt3
 	CFDateRef	outDate = (CFDateRef)NULL;
 	
 	Boolean		fileExists = FALSE;
-    Boolean		isDirectory = FALSE;
+//    Boolean		isDirectory = FALSE;
 	
     struct stat		statBuf;
     char			path[4096];
