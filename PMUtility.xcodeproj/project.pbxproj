@@ -98,16 +98,7 @@
 		754C47A915DC239F00316C67 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		754C47AA15DC239F00316C67 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		754C47AB15DC239F00316C67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		754C47AE15DC239F00316C67 /* PMUitility-NOARC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PMUitility-NOARC-Info.plist"; sourceTree = "<group>"; };
-		754C47B015DC239F00316C67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		754C47B215DC239F00316C67 /* PMUitility-NOARC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PMUitility-NOARC-Prefix.pch"; sourceTree = "<group>"; };
-		754C47B315DC239F00316C67 /* PMUitility_NOARC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMUitility_NOARC.h; sourceTree = "<group>"; };
-		754C47B415DC239F00316C67 /* PMUitility_NOARC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMUitility_NOARC.m; sourceTree = "<group>"; };
 		754C47BC15DC23A000316C67 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		754C47C415DC23A000316C67 /* PMUitility-NOARCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PMUitility-NOARCTests-Info.plist"; sourceTree = "<group>"; };
-		754C47C615DC23A000316C67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		754C47C815DC23A000316C67 /* PMUitility_NOARCTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMUitility_NOARCTests.h; sourceTree = "<group>"; };
-		754C47C915DC23A000316C67 /* PMUitility_NOARCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMUitility_NOARCTests.m; sourceTree = "<group>"; };
 		754C47DE15DC24C600316C67 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		754C47E015DC24F600316C67 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libcrypto.dylib; sourceTree = DEVELOPER_DIR; };
 		754C47EE15DC2DF100316C67 /* libpmutility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpmutility.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,8 +134,6 @@
 				754C47DE15DC24C600316C67 /* Security.framework */,
 				7535D1E714DF24AA00613F39 /* pmUtility.h */,
 				7535D1D814DF240C00613F39 /* PMUtility */,
-				754C47AC15DC239F00316C67 /* PMUitility-NOARC */,
-				754C47C215DC23A000316C67 /* PMUitility-NOARCTests */,
 				7535D1D114DF240C00613F39 /* Frameworks */,
 				7535D1D014DF240C00613F39 /* Products */,
 			);
@@ -249,45 +238,6 @@
 				754C47AB15DC239F00316C67 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		754C47AC15DC239F00316C67 /* PMUitility-NOARC */ = {
-			isa = PBXGroup;
-			children = (
-				754C47B315DC239F00316C67 /* PMUitility_NOARC.h */,
-				754C47B415DC239F00316C67 /* PMUitility_NOARC.m */,
-				754C47AD15DC239F00316C67 /* Supporting Files */,
-			);
-			path = "PMUitility-NOARC";
-			sourceTree = "<group>";
-		};
-		754C47AD15DC239F00316C67 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				754C47AE15DC239F00316C67 /* PMUitility-NOARC-Info.plist */,
-				754C47AF15DC239F00316C67 /* InfoPlist.strings */,
-				754C47B215DC239F00316C67 /* PMUitility-NOARC-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		754C47C215DC23A000316C67 /* PMUitility-NOARCTests */ = {
-			isa = PBXGroup;
-			children = (
-				754C47C815DC23A000316C67 /* PMUitility_NOARCTests.h */,
-				754C47C915DC23A000316C67 /* PMUitility_NOARCTests.m */,
-				754C47C315DC23A000316C67 /* Supporting Files */,
-			);
-			path = "PMUitility-NOARCTests";
-			sourceTree = "<group>";
-		};
-		754C47C315DC23A000316C67 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				754C47C415DC23A000316C67 /* PMUitility-NOARCTests-Info.plist */,
-				754C47C515DC23A000316C67 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,22 +389,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				7535D1DC14DF240C00613F39 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		754C47AF15DC239F00316C67 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				754C47B015DC239F00316C67 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		754C47C515DC23A000316C67 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				754C47C615DC23A000316C67 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
