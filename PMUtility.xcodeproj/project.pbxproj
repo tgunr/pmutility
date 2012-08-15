@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		751186CA1559A17900D064F2 /* pm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22714DF29E000613F39 /* pm.m */; };
 		7535D1D314DF240C00613F39 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D1D214DF240C00613F39 /* Cocoa.framework */; };
 		7535D1DD14DF240C00613F39 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7535D1DB14DF240C00613F39 /* InfoPlist.strings */; };
 		7535D1E814DF24AA00613F39 /* pmUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 7535D1E714DF24AA00613F39 /* pmUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,10 +46,11 @@
 		7535D22F14DF29E000613F39 /* pmCFUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22914DF29E000613F39 /* pmCFUtility.c */; };
 		7535D23014DF29E000613F39 /* pmNSUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 7535D22A14DF29E000613F39 /* pmNSUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7535D23114DF29E000613F39 /* pmNSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22B14DF29E000613F39 /* pmNSUtility.m */; };
+		754C47E815DC2DF100316C67 /* pm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22714DF29E000613F39 /* pm.m */; };
+		754C47F515DC2FA500316C67 /* pmCFUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22914DF29E000613F39 /* pmCFUtility.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		751186B91559A0E700D064F2 /* libpmutilitylib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpmutilitylib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7535D1CF14DF240C00613F39 /* PMUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PMUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7535D1D214DF240C00613F39 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7535D1D514DF240C00613F39 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -95,16 +95,25 @@
 		7535D22914DF29E000613F39 /* pmCFUtility.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pmCFUtility.c; sourceTree = "<group>"; };
 		7535D22A14DF29E000613F39 /* pmNSUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pmNSUtility.h; sourceTree = "<group>"; };
 		7535D22B14DF29E000613F39 /* pmNSUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pmNSUtility.m; sourceTree = "<group>"; };
+		754C47A915DC239F00316C67 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		754C47AA15DC239F00316C67 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		754C47AB15DC239F00316C67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		754C47AE15DC239F00316C67 /* PMUitility-NOARC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PMUitility-NOARC-Info.plist"; sourceTree = "<group>"; };
+		754C47B015DC239F00316C67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		754C47B215DC239F00316C67 /* PMUitility-NOARC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PMUitility-NOARC-Prefix.pch"; sourceTree = "<group>"; };
+		754C47B315DC239F00316C67 /* PMUitility_NOARC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMUitility_NOARC.h; sourceTree = "<group>"; };
+		754C47B415DC239F00316C67 /* PMUitility_NOARC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMUitility_NOARC.m; sourceTree = "<group>"; };
+		754C47BC15DC23A000316C67 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		754C47C415DC23A000316C67 /* PMUitility-NOARCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PMUitility-NOARCTests-Info.plist"; sourceTree = "<group>"; };
+		754C47C615DC23A000316C67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		754C47C815DC23A000316C67 /* PMUitility_NOARCTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMUitility_NOARCTests.h; sourceTree = "<group>"; };
+		754C47C915DC23A000316C67 /* PMUitility_NOARCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMUitility_NOARCTests.m; sourceTree = "<group>"; };
+		754C47DE15DC24C600316C67 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		754C47E015DC24F600316C67 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libcrypto.dylib; sourceTree = DEVELOPER_DIR; };
+		754C47EE15DC2DF100316C67 /* libpmutility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpmutility.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		751186B61559A0E700D064F2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7535D1CB14DF240C00613F39 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -117,14 +126,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		754C47E915DC2DF100316C67 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		7535D1C314DF240C00613F39 = {
 			isa = PBXGroup;
 			children = (
+				754C47E015DC24F600316C67 /* libcrypto.dylib */,
+				754C47DE15DC24C600316C67 /* Security.framework */,
 				7535D1E714DF24AA00613F39 /* pmUtility.h */,
 				7535D1D814DF240C00613F39 /* PMUtility */,
+				754C47AC15DC239F00316C67 /* PMUitility-NOARC */,
+				754C47C215DC23A000316C67 /* PMUitility-NOARCTests */,
 				7535D1D114DF240C00613F39 /* Frameworks */,
 				7535D1D014DF240C00613F39 /* Products */,
 			);
@@ -134,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				7535D1CF14DF240C00613F39 /* PMUtility.framework */,
-				751186B91559A0E700D064F2 /* libpmutilitylib.a */,
+				754C47EE15DC2DF100316C67 /* libpmutility.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,6 +169,8 @@
 				7535D1D614DF240C00613F39 /* CoreData.framework */,
 				7535D1D714DF240C00613F39 /* Foundation.framework */,
 				7535D1D214DF240C00613F39 /* Cocoa.framework */,
+				754C47BC15DC23A000316C67 /* SenTestingKit.framework */,
+				754C47A815DC239F00316C67 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -219,16 +241,58 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		754C47A815DC239F00316C67 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				754C47A915DC239F00316C67 /* AppKit.framework */,
+				754C47AA15DC239F00316C67 /* CoreData.framework */,
+				754C47AB15DC239F00316C67 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		754C47AC15DC239F00316C67 /* PMUitility-NOARC */ = {
+			isa = PBXGroup;
+			children = (
+				754C47B315DC239F00316C67 /* PMUitility_NOARC.h */,
+				754C47B415DC239F00316C67 /* PMUitility_NOARC.m */,
+				754C47AD15DC239F00316C67 /* Supporting Files */,
+			);
+			path = "PMUitility-NOARC";
+			sourceTree = "<group>";
+		};
+		754C47AD15DC239F00316C67 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				754C47AE15DC239F00316C67 /* PMUitility-NOARC-Info.plist */,
+				754C47AF15DC239F00316C67 /* InfoPlist.strings */,
+				754C47B215DC239F00316C67 /* PMUitility-NOARC-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		754C47C215DC23A000316C67 /* PMUitility-NOARCTests */ = {
+			isa = PBXGroup;
+			children = (
+				754C47C815DC23A000316C67 /* PMUitility_NOARCTests.h */,
+				754C47C915DC23A000316C67 /* PMUitility_NOARCTests.m */,
+				754C47C315DC23A000316C67 /* Supporting Files */,
+			);
+			path = "PMUitility-NOARCTests";
+			sourceTree = "<group>";
+		};
+		754C47C315DC23A000316C67 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				754C47C415DC23A000316C67 /* PMUitility-NOARCTests-Info.plist */,
+				754C47C515DC23A000316C67 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		751186B71559A0E700D064F2 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7535D1CC14DF240C00613F39 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,26 +317,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		754C47EA15DC2DF100316C67 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		751186B81559A0E700D064F2 /* pmutilitylib */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 751186BC1559A0E700D064F2 /* Build configuration list for PBXNativeTarget "pmutilitylib" */;
-			buildPhases = (
-				751186B51559A0E700D064F2 /* Sources */,
-				751186B61559A0E700D064F2 /* Frameworks */,
-				751186B71559A0E700D064F2 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = pmutilitylib;
-			productName = pmutilitylib;
-			productReference = 751186B91559A0E700D064F2 /* libpmutilitylib.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		7535D1CE14DF240C00613F39 /* PMUtility */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7535D1E414DF240C00613F39 /* Build configuration list for PBXNativeTarget "PMUtility" */;
@@ -290,6 +344,23 @@
 			productName = PMUtility;
 			productReference = 7535D1CF14DF240C00613F39 /* PMUtility.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		754C47E615DC2DF100316C67 /* pmutility */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 754C47EB15DC2DF100316C67 /* Build configuration list for PBXNativeTarget "pmutility" */;
+			buildPhases = (
+				754C47E715DC2DF100316C67 /* Sources */,
+				754C47E915DC2DF100316C67 /* Frameworks */,
+				754C47EA15DC2DF100316C67 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pmutility;
+			productName = pmutilitylib;
+			productReference = 754C47EE15DC2DF100316C67 /* libpmutility.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -312,7 +383,7 @@
 			projectRoot = "";
 			targets = (
 				7535D1CE14DF240C00613F39 /* PMUtility */,
-				751186B81559A0E700D064F2 /* pmutilitylib */,
+				754C47E615DC2DF100316C67 /* pmutility */,
 			);
 		};
 /* End PBXProject section */
@@ -329,14 +400,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		751186B51559A0E700D064F2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				751186CA1559A17900D064F2 /* pm.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7535D1CA14DF240C00613F39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,6 +423,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		754C47E715DC2DF100316C67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				754C47F515DC2FA500316C67 /* pmCFUtility.c in Sources */,
+				754C47E815DC2DF100316C67 /* pm.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -371,38 +443,30 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		754C47AF15DC239F00316C67 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				754C47B015DC239F00316C67 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		754C47C515DC23A000316C67 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				754C47C615DC23A000316C67 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		751186BA1559A0E700D064F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EXECUTABLE_PREFIX = lib;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SYMROOT = ../build;
-			};
-			name = Debug;
-		};
-		751186BB1559A0E700D064F2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EXECUTABLE_PREFIX = lib;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SYMROOT = ../build;
-			};
-			name = Release;
-		};
 		7535D1E214DF240C00613F39 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -421,7 +485,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_OPENMP_FLAGS = "-fopenmp";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 			};
 			name = Debug;
 		};
@@ -429,8 +493,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -443,7 +506,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_OPENMP_FLAGS = "-fopenmp";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.7;
 			};
 			name = Release;
 		};
@@ -459,7 +522,6 @@
 				INSTALL_PATH = "@rpath";
 				OTHER_LDFLAGS = "-lcrypto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SYMROOT = ../build;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -476,22 +538,35 @@
 				INSTALL_PATH = "@rpath";
 				OTHER_LDFLAGS = "-lcrypto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SYMROOT = ../build;
 				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		754C47EC15DC2DF100316C67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SYMROOT = "";
+			};
+			name = Debug;
+		};
+		754C47ED15DC2DF100316C67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SYMROOT = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		751186BC1559A0E700D064F2 /* Build configuration list for PBXNativeTarget "pmutilitylib" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				751186BA1559A0E700D064F2 /* Debug */,
-				751186BB1559A0E700D064F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		7535D1C814DF240C00613F39 /* Build configuration list for PBXProject "PMUtility" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -506,6 +581,15 @@
 			buildConfigurations = (
 				7535D1E514DF240C00613F39 /* Debug */,
 				7535D1E614DF240C00613F39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		754C47EB15DC2DF100316C67 /* Build configuration list for PBXNativeTarget "pmutility" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				754C47EC15DC2DF100316C67 /* Debug */,
+				754C47ED15DC2DF100316C67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
