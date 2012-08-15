@@ -48,6 +48,7 @@
 		7535D23114DF29E000613F39 /* pmNSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22B14DF29E000613F39 /* pmNSUtility.m */; };
 		754C47E815DC2DF100316C67 /* pm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22714DF29E000613F39 /* pm.m */; };
 		754C47F515DC2FA500316C67 /* pmCFUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22914DF29E000613F39 /* pmCFUtility.c */; };
+		754C484015DC3DC900316C67 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 754C483F15DC3DC900316C67 /* libcrypto.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		754C47DE15DC24C600316C67 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		754C47E015DC24F600316C67 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libcrypto.dylib; sourceTree = DEVELOPER_DIR; };
 		754C47EE15DC2DF100316C67 /* libpmutility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpmutility.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		754C483F15DC3DC900316C67 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754C484015DC3DC900316C67 /* libcrypto.dylib in Frameworks */,
 				7535D1F514DF273400613F39 /* Carbon.framework in Frameworks */,
 				7535D1F614DF273400613F39 /* CoreFoundation.framework in Frameworks */,
 				7535D1F714DF273400613F39 /* Security.framework in Frameworks */,
@@ -130,6 +133,7 @@
 		7535D1C314DF240C00613F39 = {
 			isa = PBXGroup;
 			children = (
+				754C483F15DC3DC900316C67 /* libcrypto.dylib */,
 				754C47E015DC24F600316C67 /* libcrypto.dylib */,
 				754C47DE15DC24C600316C67 /* Security.framework */,
 				7535D1E714DF24AA00613F39 /* pmUtility.h */,
@@ -411,7 +415,6 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -432,7 +435,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -454,7 +456,6 @@
 				GCC_PREFIX_HEADER = "PMUtility/PMUtility-Prefix.pch";
 				INFOPLIST_FILE = "PMUtility/PMUtility-Info.plist";
 				INSTALL_PATH = "@rpath";
-				OTHER_LDFLAGS = "-lcrypto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -470,7 +471,6 @@
 				GCC_PREFIX_HEADER = "PMUtility/PMUtility-Prefix.pch";
 				INFOPLIST_FILE = "PMUtility/PMUtility-Info.plist";
 				INSTALL_PATH = "@rpath";
-				OTHER_LDFLAGS = "-lcrypto";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};

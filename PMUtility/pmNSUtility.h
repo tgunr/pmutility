@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@interface PMSUtility : NSObject {
+@interface PMUtility : NSObject {
 	
 }
 

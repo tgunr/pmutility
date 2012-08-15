@@ -442,8 +442,7 @@ CFDateRef	CFURLCopyDateCreated( CFAllocatorRef inAllocator, CFURLRef url, SInt32
 	CFDateRef	outDate = (CFDateRef)NULL;
 	
 	Boolean		fileExists = FALSE;
-    Boolean		isDirectory = FALSE;
-		
+
     struct stat		statBuf;
     char			path[4096];
 	
@@ -485,8 +484,7 @@ CFDateRef	CFURLCopyDateAccessed( CFAllocatorRef inAllocator, CFURLRef url, SInt3
 	CFDateRef	outDate = (CFDateRef)NULL;
 	
 	Boolean		fileExists = FALSE;
-    Boolean		isDirectory = FALSE;
-	
+
     struct stat		statBuf;
     char			path[4096];
 	
@@ -760,7 +758,7 @@ void statusCallbackPath(FSFileOperationRef fileOp, const char *currentItem, FSFi
 		if (info)
 		{
 			CFStringRef theString = (CFStringRef)info;
-			fprintf(stderr, "Info %lx\n", info);
+			fprintf(stderr, "Info %lx\n", (unsigned long)info);
 			CFShow(theString);
 		}
 	}	
@@ -834,7 +832,7 @@ void statusCallback(FSFileOperationRef fileOp, const FSRef *currentItem, FSFileO
 		if (info)
 		{
 			CFStringRef theString = (CFStringRef)info;
-			fprintf(stderr, "Info:  0x%lx\n", info);
+			fprintf(stderr, "Info:  0x%lx\n", (long)info);
 			CFShow(theString);
 		}
 		
@@ -1053,15 +1051,15 @@ FSPathMakeRefdestFailed:
 	return err;
 }
 
-void OperateUsage(const char *progname)
-{
-	printf("Usage: %s -s sourcePath -d destPath [-i statusInterval] [-p] [-n destinationName] [-f infoString] [-a] [-m] [-v] [-o] [-w] [-c] [-e]\n",progname);
-	printf("\tsourcePath: utf-8 path to source file or directory\n\tdestPath: utf-8 path to destination directory\n\tstatusInterval: minimum number of seconds between status callbacks.  Default is 1.0\n");
-	printf("\t-p uses path based call.  Default is to use FSRef based call\n\tdestinationName: utf8 string specifying new name for source item in destination directory.  Default is source item name.\n");
-	printf("\t-f infoString will pass a clientContext with a CFString created from infoString\t-a uses async call.  Default is sync\n\t-v verbose mode: print more status info\n\t-m move instead of copy.\n");
-	printf("\t-o kFSFileOperationOverwrite, -w kFSFileOperationSkipSourcePermissionErrors, -c kFSFileOperationDoNotMoveAcrossVolumes, -e kFSFileOperationSkipPreflight.  Default is kFSFileOperationDefaultOptions.\n");
-	exit(1);
-}
+//void OperateUsage(const char *progname)
+//{
+//	printf("Usage: %s -s sourcePath -d destPath [-i statusInterval] [-p] [-n destinationName] [-f infoString] [-a] [-m] [-v] [-o] [-w] [-c] [-e]\n",progname);
+//	printf("\tsourcePath: utf-8 path to source file or directory\n\tdestPath: utf-8 path to destination directory\n\tstatusInterval: minimum number of seconds between status callbacks.  Default is 1.0\n");
+//	printf("\t-p uses path based call.  Default is to use FSRef based call\n\tdestinationName: utf8 string specifying new name for source item in destination directory.  Default is source item name.\n");
+//	printf("\t-f infoString will pass a clientContext with a CFString created from infoString\t-a uses async call.  Default is sync\n\t-v verbose mode: print more status info\n\t-m move instead of copy.\n");
+//	printf("\t-o kFSFileOperationOverwrite, -w kFSFileOperationSkipSourcePermissionErrors, -c kFSFileOperationDoNotMoveAcrossVolumes, -e kFSFileOperationSkipPreflight.  Default is kFSFileOperationDefaultOptions.\n");
+//	exit(1);
+//}
 
 
 
