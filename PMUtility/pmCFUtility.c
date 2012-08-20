@@ -141,37 +141,48 @@ size_t			CFURLGetXattrSize( CFURLRef inURL, CFStringRef inKeyName )
 
 CFStringRef		CFURLCopyXattr( CFAllocatorRef inAllocator, CFURLRef inURL, CFStringRef inKeyName, OSStatus* outError )
 {
-	UInt8			pathText[4096];
+	char			pathText[4096];
 	Boolean			goodPath = FALSE;
 	OSStatus		outResult = -1;
 	const char*		keyText = CFStringCreateCString(inKeyName, kCFStringEncodingUTF8);
 	void*			keyValue = NULL;
-	size_t			keyValueSize = 0;
+	ssize_t			keyValueSize = 0;
 	
 	CFStringRef		keyValueString = NULL;
 	
-	if( keyText == NULL ) goto EXIT;
-
+	if( keyText == NULL )
+        goto EXIT;
+//    bzero(pathText, 4096);
 	goodPath = CFURLGetFileSystemRepresentation( inURL, TRUE, (UInt8*)&pathText, 4096 );
-	if( !goodPath ) goto EXIT;
+	if( !goodPath )
+        goto EXIT;
 
 	keyValueSize = getxattr( (const char *)&pathText, keyText, NULL, 0, 0, 0 );
-	if( keyValueSize == -1 ) goto EXIT;
+	if( keyValueSize == -1 )
+        goto EXIT;
 	
 	keyValue = (UInt8*)calloc( 1, keyValueSize+1 );
-	if( keyValue == NULL) goto EXIT;
+	if( keyValue == NULL)
+        goto EXIT;
 	
 	keyValueSize = getxattr( (const char *)&pathText, keyText, keyValue, keyValueSize, 0, 0 );
-	if( keyValueSize == -1 ) goto EXIT;
+	if( keyValueSize == -1 )
+        goto EXIT;
 	
 	keyValueString = CFStringCreateWithBytes( inAllocator, (const UInt8*)keyValue, (CFIndex)keyValueSize, kCFStringEncodingUTF8, FALSE );
 	if( keyValueString != NULL ) outResult = 0;
 	
 EXIT:
-	if( keyText != NULL ) free( (void*)keyText );
-	if( keyValue != NULL ) free( keyValue );
+    if (errno) {
+        printf("File: \"%s\"\nKey: %s\nError code: %d. Error message: %s\n", pathText, keyText, errno, strerror(errno));
+    }
+	if( keyText != NULL )
+        free( (void*)keyText );
+	if( keyValue != NULL )
+        free( keyValue );
 	
-	if( outError != NULL ) *outError = outResult;
+	if( outError != NULL )
+        *outError = outResult;
 	return keyValueString;	
 }
 

@@ -61,6 +61,9 @@ OSStatus SetAsyncPathOpInMotion(Boolean copy, FSFileOperationRef fileOp, const c
 OSStatus SetAsyncOpInMotion(Boolean copy, FSFileOperationRef fileOp, const FSRef *source, const FSRef *destDir, CFStringRef destName, OptionBits flags, FSFileOperationStatusProcPtr callback, CFTimeInterval statusChangeInterval, CFStringRef contextString);
 OSStatus OperateByPath(Boolean copy, const char *sourcePath, const char *destPath, const char *destName, CFTimeInterval statusInterval, OptionBits options, Boolean async, CFStringRef contextString);
 OSStatus OperateByRef(Boolean copy, const char *sourcePath, const char *destPath, const char *destName, CFTimeInterval statusInterval, OptionBits options, Boolean async, CFStringRef contextString);
+
+#define IFCFRELEASE(symbol) if (symbol) CFRelease(symbol)
+
 #endif
 
 
