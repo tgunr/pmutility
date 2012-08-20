@@ -19,6 +19,8 @@
 
 - (IBAction) animateToFloatValueFrom: sender;
 - (void) animateToFloatValue:(float) newValue allowsTicksOnly:(BOOL)ticksOnly;
+- (IBAction) animateToIntValueFrom: sender;
+- (void) animateToIntValue:(int) newValue allowsTicksOnly:(BOOL)ticksOnly;
 
 @end
 
@@ -26,6 +28,8 @@
 
 - (IBAction) animateToFloatValueFrom: sender;
 - (void) animateToFloatValue:(float) newValue allowsTicksOnly:(BOOL)ticksOnly;
+- (IBAction) animateToIntValueFrom: sender;
+- (void) animateToIntValue:(int) newValue allowsTicksOnly:(BOOL)ticksOnly;
 
 @end
 
