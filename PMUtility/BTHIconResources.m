@@ -196,9 +196,9 @@
 	OSStatus err;
 	OSType fileType, creatorType;
 
-	creatorType = UTGetOSTypeFromString((__bridge CFStringRef) creator);
+	creatorType = UTGetOSTypeFromString(( CFStringRef) creator);
 	if ([iconType length]) {
-		fileType = UTGetOSTypeFromString((__bridge CFStringRef) iconType);
+		fileType = UTGetOSTypeFromString(( CFStringRef) iconType);
 	} else {
 		fileType = kSystemIconsCreator;
 	}
@@ -222,7 +222,7 @@
 - (NSImage *)iconForMIME:(NSString *)mimetype
 		style: (IconTransformType) transformation tinting: (NSColor *) customTint {
 	IconRef icon;
-	OSStatus err = GetIconRefFromTypeInfo(/*creator*/ 0, /*type*/ 0, /*extension*/ NULL, (__bridge CFStringRef)mimetype, kIconServicesNormalUsageFlag, &icon);
+	OSStatus err = GetIconRefFromTypeInfo(/*creator*/ 0, /*type*/ 0, /*extension*/ NULL, (CFStringRef)mimetype, kIconServicesNormalUsageFlag, &icon);
 	if(!icon || err) {
 		return nil;
 	}
@@ -246,7 +246,7 @@ OSStatus GetIconRefFromUTI(CFStringRef typeIdent, IconRef * outIconRef){
 	if (iconRefFromUTIDict == nil){
 		iconRefFromUTIDict = [[NSMutableDictionary alloc] init];
 	} else {
-		NSData * cachedResult = [iconRefFromUTIDict objectForKey: (__bridge id)typeIdent];
+		NSData * cachedResult = [iconRefFromUTIDict objectForKey: (id)typeIdent];
 		if (cachedResult != nil) {
 			[cachedResult getBytes:outIconRef];
 			AcquireIconRef(*outIconRef);
@@ -277,7 +277,7 @@ OSStatus GetIconRefFromUTI(CFStringRef typeIdent, IconRef * outIconRef){
 	if (err == noErr) {
 		AcquireIconRef(*outIconRef);
 		NSData * cachedResult = [NSData dataWithBytes:outIconRef length:sizeof(IconRef)];
-		[iconRefFromUTIDict setObject:cachedResult forKey: (__bridge id)typeIdent];
+		[iconRefFromUTIDict setObject:cachedResult forKey: ( id)typeIdent];
 	}
     if (ourMimeType) {
         CFRelease(ourMimeType);
