@@ -46,10 +46,23 @@
 #import "pmCFUtility.h"
 #import "pmNSUtility.h"
 
-@implementation NSArray (PMSExtensions)
+@implementation NSArray (PMExtensions)
 
 -(BOOL)containsObjectIdenticalTo: (id)obj { 
     return [self indexOfObjectIdenticalTo: obj]!=NSNotFound; 
+}
+
+-(NSArray*)arrayWithSubTrees
+{
+	int		aIndex, aCount = [self count];
+	NSMutableArray*		workArray = [NSMutableArray arrayWithCapacity:256];
+	NSArray*			outArray = nil;
+	
+	for( aIndex=0; aIndex < aCount; aIndex++ )
+		[workArray addObject:[[[self objectAtIndex:aIndex] nodeData] subTree]];
+
+	outArray = [NSArray arrayWithArray:workArray];
+	return outArray;
 }
 
 -(NSArray*)arrayOfURLsFromPaths
@@ -103,11 +116,12 @@
 		while ( (workPath = (NSString*)[workEnum nextObject]) ) {
 			workURL = [NSURL fileURLWithPath:workPath];
 			if( workURL != nil )
-				if( CFURLConfromsToUTIs( kCFAllocatorDefault, (__bridge CFURLRef)workURL, (__bridge CFArrayRef)theUTIs, NULL ) )
+				if( CFURLConfromsToUTIs( kCFAllocatorDefault, (CFURLRef)workURL, (CFArrayRef)theUTIs, NULL ) )
 					[workArray addObject:( saveURLs == YES ) ? workURL : [NSString stringWithString:workPath]];
 		}
 	
 		outArray = [NSArray arrayWithArray:workArray];
+		[workArray release];
 	}
 	
 	return outArray;

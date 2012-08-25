@@ -1,9 +1,12 @@
 #import <Foundation/Foundation.h>
 #import "NSString_Extensions.h"
 
-@interface NSArray(PMSExtensions)
+@interface NSArray(PMExtensions)
 
 -(BOOL)containsObjectIdenticalTo:(id)object;
+
+-(NSArray*)arrayWithSubTrees;
+
 -(NSArray*)arrayOfURLsFromPaths;
 -(NSArray*)arrayOfPathsFromURLs;
 
@@ -13,5 +16,5 @@
 
 -(NSString*)md5String;
 
-@end	//	NSArray(PMSExtensions)
+@end	//	NSArray(PMExtensions)
 
