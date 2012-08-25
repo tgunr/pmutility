@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7522193615E84F920003E5B9 /* pmNSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22B14DF29E000613F39 /* pmNSUtility.m */; };
 		7535D1D314DF240C00613F39 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D1D214DF240C00613F39 /* Cocoa.framework */; };
 		7535D1DD14DF240C00613F39 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7535D1DB14DF240C00613F39 /* InfoPlist.strings */; };
 		7535D1E814DF24AA00613F39 /* pmUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 7535D1E714DF24AA00613F39 /* pmUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -17,7 +18,6 @@
 		7535D1F114DF273300613F39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D1D714DF240C00613F39 /* Foundation.framework */; };
 		7535D1F514DF273400613F39 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D1F214DF273300613F39 /* Carbon.framework */; };
 		7535D1F614DF273400613F39 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D1F314DF273300613F39 /* CoreFoundation.framework */; };
-		7535D1F714DF273400613F39 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D1F414DF273300613F39 /* Security.framework */; };
 		7535D20F14DF27BD00613F39 /* NSDate_Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7535D1F914DF27BB00613F39 /* NSDate_Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7535D21014DF27BD00613F39 /* NSDate_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D1FA14DF27BB00613F39 /* NSDate_Extensions.m */; };
 		7535D21114DF27BD00613F39 /* NSApplication_Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7535D1FB14DF27BB00613F39 /* NSApplication_Extensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,9 +46,9 @@
 		7535D22F14DF29E000613F39 /* pmCFUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22914DF29E000613F39 /* pmCFUtility.c */; };
 		7535D23014DF29E000613F39 /* pmNSUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 7535D22A14DF29E000613F39 /* pmNSUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7535D23114DF29E000613F39 /* pmNSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22B14DF29E000613F39 /* pmNSUtility.m */; };
+		7548266315E8387D00A1AAAB /* libcrypto.0.9.8.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7548266215E8387D00A1AAAB /* libcrypto.0.9.8.dylib */; };
 		754C47E815DC2DF100316C67 /* pm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22714DF29E000613F39 /* pm.m */; };
 		754C47F515DC2FA500316C67 /* pmCFUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22914DF29E000613F39 /* pmCFUtility.c */; };
-		754C484015DC3DC900316C67 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 754C483F15DC3DC900316C67 /* libcrypto.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,14 +96,12 @@
 		7535D22914DF29E000613F39 /* pmCFUtility.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pmCFUtility.c; sourceTree = "<group>"; };
 		7535D22A14DF29E000613F39 /* pmNSUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pmNSUtility.h; sourceTree = "<group>"; };
 		7535D22B14DF29E000613F39 /* pmNSUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pmNSUtility.m; sourceTree = "<group>"; };
+		7548266215E8387D00A1AAAB /* libcrypto.0.9.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.0.9.8.dylib; path = ../../../../../../../usr/lib/libcrypto.0.9.8.dylib; sourceTree = "<group>"; };
 		754C47A915DC239F00316C67 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		754C47AA15DC239F00316C67 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		754C47AB15DC239F00316C67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		754C47BC15DC23A000316C67 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		754C47DE15DC24C600316C67 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		754C47E015DC24F600316C67 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib/libcrypto.dylib; sourceTree = DEVELOPER_DIR; };
 		754C47EE15DC2DF100316C67 /* libpmutility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpmutility.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		754C483F15DC3DC900316C67 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,12 +109,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				754C484015DC3DC900316C67 /* libcrypto.dylib in Frameworks */,
 				7535D1F514DF273400613F39 /* Carbon.framework in Frameworks */,
 				7535D1F614DF273400613F39 /* CoreFoundation.framework in Frameworks */,
-				7535D1F714DF273400613F39 /* Security.framework in Frameworks */,
 				7535D1F114DF273300613F39 /* Foundation.framework in Frameworks */,
 				7535D1D314DF240C00613F39 /* Cocoa.framework in Frameworks */,
+				7548266315E8387D00A1AAAB /* libcrypto.0.9.8.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,9 +130,7 @@
 		7535D1C314DF240C00613F39 = {
 			isa = PBXGroup;
 			children = (
-				754C483F15DC3DC900316C67 /* libcrypto.dylib */,
-				754C47E015DC24F600316C67 /* libcrypto.dylib */,
-				754C47DE15DC24C600316C67 /* Security.framework */,
+				7548266215E8387D00A1AAAB /* libcrypto.0.9.8.dylib */,
 				7535D1E714DF24AA00613F39 /* pmUtility.h */,
 				7535D1D814DF240C00613F39 /* PMUtility */,
 				7535D1D114DF240C00613F39 /* Frameworks */,
@@ -381,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7522193615E84F920003E5B9 /* pmNSUtility.m in Sources */,
 				754C47F515DC2FA500316C67 /* pmCFUtility.c in Sources */,
 				754C47E815DC2DF100316C67 /* pm.m in Sources */,
 			);
@@ -400,11 +396,11 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7535D1E214DF240C00613F39 /* Debug */ = {
+		7535D1E214DF240C00613F39 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -423,14 +419,15 @@
 				LD_OPENMP_FLAGS = "-fopenmp";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx10.7;
+				SYMROOT = ../build;
 			};
-			name = Debug;
+			name = Development;
 		};
 		7535D1E314DF240C00613F39 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -443,10 +440,11 @@
 				LD_OPENMP_FLAGS = "-fopenmp";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx10.7;
+				SYMROOT = ../build;
 			};
 			name = Release;
 		};
-		7535D1E514DF240C00613F39 /* Debug */ = {
+		7535D1E514DF240C00613F39 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -460,7 +458,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
-			name = Debug;
+			name = Development;
 		};
 		7535D1E614DF240C00613F39 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -478,7 +476,7 @@
 			};
 			name = Release;
 		};
-		754C47EC15DC2DF100316C67 /* Debug */ = {
+		754C47EC15DC2DF100316C67 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -486,9 +484,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SYMROOT = "";
 			};
-			name = Debug;
+			name = Development;
 		};
 		754C47ED15DC2DF100316C67 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -498,7 +495,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SYMROOT = "";
 			};
 			name = Release;
 		};
@@ -508,7 +504,7 @@
 		7535D1C814DF240C00613F39 /* Build configuration list for PBXProject "PMUtility" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7535D1E214DF240C00613F39 /* Debug */,
+				7535D1E214DF240C00613F39 /* Development */,
 				7535D1E314DF240C00613F39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -517,7 +513,7 @@
 		7535D1E414DF240C00613F39 /* Build configuration list for PBXNativeTarget "PMUtility" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7535D1E514DF240C00613F39 /* Debug */,
+				7535D1E514DF240C00613F39 /* Development */,
 				7535D1E614DF240C00613F39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -526,7 +522,7 @@
 		754C47EB15DC2DF100316C67 /* Build configuration list for PBXNativeTarget "pmutility" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				754C47EC15DC2DF100316C67 /* Debug */,
+				754C47EC15DC2DF100316C67 /* Development */,
 				754C47ED15DC2DF100316C67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

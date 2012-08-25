@@ -195,9 +195,9 @@ CFStringRef CFURLCopyXattr(CFAllocatorRef inAllocator, CFURLRef inURL, CFStringR
 		outResult  = 0;
 
 	EXIT:
-			if (outResult) {
-				printf("File: \"%s\"\nKey: %s\nError code: %d. Error message: %s\n", pathText, keyText, errno, strerror(errno));
-			}
+//    if (outResult) {
+//        printf("File: \"%s\"\nKey: %s\nError code: %d. Error message: %s\n", pathText, keyText, errno, strerror(errno));
+//    }
 	if (keyText != NULL)
 		free((void *)keyText);
 	if (keyValue != NULL)
@@ -419,7 +419,8 @@ CFStringRef CFStringCreateFromCommandPipe(CFAllocatorRef inAllocator, CFURLRef i
 	if (inAllocator == NULL)
 		inAllocator = kCFAllocatorDefault;
 
-	doCFCommand = CFStringCreateWithFormat(inAllocator, NULL, CFSTR("\"%@\" %@"), inCommandURL, inCommandArgs);
+    CFStringRef cmdPath = CFURLCopyFileSystemPath(inCommandURL, kCFURLPOSIXPathStyle);
+	doCFCommand = CFStringCreateWithFormat(inAllocator, NULL, CFSTR("\"%@\" %@"), cmdPath, inCommandArgs);
 	if (doCFCommand == NULL)
 		goto BAIL;
 
@@ -429,13 +430,12 @@ CFStringRef CFStringCreateFromCommandPipe(CFAllocatorRef inAllocator, CFURLRef i
 	if (doCommand == NULL)
 		goto BAIL;
 
-	//	printf("Carousel command: %s", doCommand);
-
 	utf8Name = (char *)calloc(1, pipeSize);
 	if (doCommand == NULL)
 		goto BAIL;
 
-	pipe = popen(doCommand, "r");
+	printf("Carousel command: %s", doCommand);
+    pipe = popen(doCommand, "r");
 	if (pipe) {
 		pipeSize  = fread(utf8Name, 1, pipeSize, pipe);
 		outResult = pclose(pipe);
