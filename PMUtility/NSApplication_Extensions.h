@@ -7,6 +7,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface NSApplication(PMSExtensions)
+@interface NSApplication(PMExtensions)
 
 @end
