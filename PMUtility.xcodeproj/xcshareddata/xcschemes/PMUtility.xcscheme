@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0440"
+   LastUpgradeVersion = "0450"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "754C47E615DC2DF100316C67"
-               BuildableName = "libpmutility.a"
-               BlueprintName = "pmutility"
+               BlueprintIdentifier = "7535D1CE14DF240C00613F39"
+               BuildableName = "PMUtility.framework"
+               BlueprintName = "PMUtility"
                ReferencedContainer = "container:PMUtility.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -38,6 +38,7 @@
       buildConfiguration = "Development"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      enableOpenGLFrameCaptureMode = "0"
       allowLocationSimulation = "YES">
       <AdditionalOptions>
       </AdditionalOptions>
