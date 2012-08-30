@@ -26,7 +26,7 @@
 		if( CFGetTypeID((CFTypeRef)infoItem) == CFBooleanGetTypeID() )
 			[infoString appendString:[CFBooleanToNSNumber((CFBooleanRef)infoItem) md5String]];
 		else if( CFGetTypeID((CFTypeRef)infoItem) == CFUUIDGetTypeID() )
-			[infoString appendString:[(NSString*)CFUUIDCreateString(kCFAllocatorDefault,(__bridge CFUUIDRef)infoItem) md5String]];
+			[infoString appendString:[(NSString*)CFUUIDCreateString(kCFAllocatorDefault,( CFUUIDRef)infoItem) md5String]];
 		else if( CFGetTypeID((CFTypeRef)infoItem) == CFURLGetTypeID() )
 			[infoString appendString:[(NSString*)CFURLGetString((CFURLRef)infoItem) md5String]];
 		else 
