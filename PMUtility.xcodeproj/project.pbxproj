@@ -11,10 +11,6 @@
 		7535D1D314DF240C00613F39 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D1D214DF240C00613F39 /* Cocoa.framework */; };
 		7535D1DD14DF240C00613F39 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7535D1DB14DF240C00613F39 /* InfoPlist.strings */; };
 		7535D1E814DF24AA00613F39 /* pmUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 7535D1E714DF24AA00613F39 /* pmUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7535D1ED14DF24C900613F39 /* BTHIconResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 7535D1E914DF24C800613F39 /* BTHIconResources.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7535D1EE14DF24C900613F39 /* BTHIconResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D1EA14DF24C800613F39 /* BTHIconResources.m */; };
-		7535D1EF14DF24C900613F39 /* ImageAndTextCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7535D1EB14DF24C800613F39 /* ImageAndTextCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7535D1F014DF24C900613F39 /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D1EC14DF24C800613F39 /* ImageAndTextCell.m */; };
 		7535D1F114DF273300613F39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D1D714DF240C00613F39 /* Foundation.framework */; };
 		7535D1F514DF273400613F39 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D1F214DF273300613F39 /* Carbon.framework */; };
 		7535D1F614DF273400613F39 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D1F314DF273300613F39 /* CoreFoundation.framework */; };
@@ -61,10 +57,6 @@
 		7535D1DC14DF240C00613F39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7535D1DE14DF240C00613F39 /* PMUtility-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PMUtility-Prefix.pch"; sourceTree = "<group>"; };
 		7535D1E714DF24AA00613F39 /* pmUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pmUtility.h; sourceTree = "<group>"; };
-		7535D1E914DF24C800613F39 /* BTHIconResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTHIconResources.h; sourceTree = "<group>"; };
-		7535D1EA14DF24C800613F39 /* BTHIconResources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTHIconResources.m; sourceTree = "<group>"; };
-		7535D1EB14DF24C800613F39 /* ImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAndTextCell.h; sourceTree = "<group>"; };
-		7535D1EC14DF24C800613F39 /* ImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAndTextCell.m; sourceTree = "<group>"; };
 		7535D1F214DF273300613F39 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		7535D1F314DF273300613F39 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		7535D1F414DF273300613F39 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -192,10 +184,6 @@
 		7535D1F814DF279E00613F39 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7535D1E914DF24C800613F39 /* BTHIconResources.h */,
-				7535D1EA14DF24C800613F39 /* BTHIconResources.m */,
-				7535D1EB14DF24C800613F39 /* ImageAndTextCell.h */,
-				7535D1EC14DF24C800613F39 /* ImageAndTextCell.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -247,8 +235,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7535D1E814DF24AA00613F39 /* pmUtility.h in Headers */,
-				7535D1ED14DF24C900613F39 /* BTHIconResources.h in Headers */,
-				7535D1EF14DF24C900613F39 /* ImageAndTextCell.h in Headers */,
 				7535D20F14DF27BD00613F39 /* NSDate_Extensions.h in Headers */,
 				7535D21114DF27BD00613F39 /* NSApplication_Extensions.h in Headers */,
 				7535D21314DF27BD00613F39 /* NSArray_Extensions.h in Headers */,
@@ -353,8 +339,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7535D1EE14DF24C900613F39 /* BTHIconResources.m in Sources */,
-				7535D1F014DF24C900613F39 /* ImageAndTextCell.m in Sources */,
 				7535D21014DF27BD00613F39 /* NSDate_Extensions.m in Sources */,
 				7535D21214DF27BD00613F39 /* NSApplication_Extensions.m in Sources */,
 				7535D21414DF27BD00613F39 /* NSArray_Extensions.m in Sources */,
