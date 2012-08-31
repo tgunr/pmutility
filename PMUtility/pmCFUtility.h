@@ -25,6 +25,8 @@ extern CFStringRef CFURLCopyXattr(CFAllocatorRef inAllocator, CFURLRef inURL, CF
 
 extern OSStatus FSSetXattr(FSRef *inLocation, CFStringRef inKeyName, CFStringRef inKeyValue);
 
+extern ssize_t FSGetXattrSize(FSRef *inLocation, CFStringRef inKeyName);
+
 extern CFStringRef FSCopyXattr(CFAllocatorRef inAllocator, FSRef *inLocation, CFStringRef inKeyName, OSStatus *outError);
 
 extern OSStatus          FSSetXattrProperty(CFAllocatorRef inAllocator, FSRef *inLocation, CFStringRef inKeyName, CFPropertyListRef inKeyValue);
@@ -80,8 +82,6 @@ OSStatus SetAsyncOpInMotion(Boolean copy, FSFileOperationRef fileOp, const FSRef
 OSStatus OperateByPath(Boolean copy, const char *sourcePath, const char *destPath, const char *destName, CFTimeInterval statusInterval, OptionBits options, Boolean async, CFStringRef contextString);
 
 OSStatus OperateByRef(Boolean copy, const char *sourcePath, const char *destPath, const char *destName, CFTimeInterval statusInterval, OptionBits options, Boolean async, CFStringRef contextString);
-
-#define IFCFRELEASE(symbol) if (symbol) CFRelease(symbol)
 
 #endif
 
