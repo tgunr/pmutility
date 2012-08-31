@@ -83,8 +83,6 @@ OSStatus OperateByPath(Boolean copy, const char *sourcePath, const char *destPat
 
 OSStatus OperateByRef(Boolean copy, const char *sourcePath, const char *destPath, const char *destName, CFTimeInterval statusInterval, OptionBits options, Boolean async, CFStringRef contextString);
 
-#define IFCFRELEASE(symbol) if (symbol) CFRelease(symbol)
-
 #endif
 
 
