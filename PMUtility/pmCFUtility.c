@@ -12,6 +12,9 @@
 
 // MD5 includes
 #include <openssl/evp.h>
+#include <CoreServices/CoreServices.h>
+#include <CoreFoundation/CoreFoundation.h>
+#include <unistd.h>
 
 OSStatus FSPathSetXattr(UInt8 *pathText, CFStringRef inKeyName, CFStringRef inKeyValue) {
 	OSStatus outResult = -1;
@@ -754,11 +757,11 @@ CFDataRef CFStringCreateDataForHex(CFAllocatorRef inAllocator, CFStringRef inHex
 	return outData;
 }
 
-static Boolean gDone;
-static Boolean gVerbose;
+static Boolean pmCFUtilityDone;
+static Boolean pmCFUtilityVerbose;
 
 void statusCallbackPath(FSFileOperationRef fileOp, const char *currentItem, FSFileOperationStage stage, OSStatus error, CFDictionaryRef statusDictionary, void *info) {
-	if (gVerbose) {
+	if (pmCFUtilityVerbose) {
 		printf("statusCallback called: stage: %ld, Error: %ld\n", stage, error);
 		if (currentItem)
 			printf("\tcurrentItem: %s\n", currentItem);
@@ -816,14 +819,14 @@ void statusCallbackPath(FSFileOperationRef fileOp, const char *currentItem, FSFi
 		}
 	}
 	if (stage == kFSOperationStageComplete)
-		gDone = true;
+		pmCFUtilityDone = true;
 }
 
 void statusCallback(FSFileOperationRef fileOp, const FSRef *currentItem, FSFileOperationStage stage, OSStatus error, CFDictionaryRef statusDictionary, void *info) {
-	if (gVerbose) {
+	if (pmCFUtilityVerbose) {
 		printf("statusCallback called: stage: %ld, Error: %ld\n", stage, error);
-		if (currentItem)
-			PrintFSRef(currentItem);
+//		if (currentItem)
+//			PrintFSRef(currentItem);
 
 		// attempt to get status from the dictionary
 		if (statusDictionary) {
@@ -880,7 +883,7 @@ void statusCallback(FSFileOperationRef fileOp, const FSRef *currentItem, FSFileO
 
 	}
 	if (stage == kFSOperationStageComplete)
-		gDone = true;
+		pmCFUtilityDone = true;
 }
 
 OSStatus SetAsyncPathOpInMotion(Boolean copy, FSFileOperationRef fileOp, const char *sourcePath, const char *destDirPath, CFStringRef destName, OptionBits flags, FSPathFileOperationStatusProcPtr callback, CFTimeInterval statusChangeInterval, CFStringRef contextString) {
@@ -935,11 +938,11 @@ OSStatus OperateByPath(Boolean copy, const char *sourcePath, const char *destPat
 	CFStringRef        destString = NULL;
 	char *targetPath;
 
-	gDone = false;
+	pmCFUtilityDone = false;
 
 	if (destName) {
 		destString = CFStringCreateWithCString(kCFAllocatorDefault, destName, kCFStringEncodingUTF8);
-		if ((destString == NULL) && (gVerbose))
+		if ((destString == NULL) && (pmCFUtilityVerbose))
 			fprintf(stderr, "Could not create destString for %s, using NULL\n", destName);
 	}
 
@@ -969,7 +972,7 @@ OSStatus OperateByPath(Boolean copy, const char *sourcePath, const char *destPat
 		// In a real application there should be plenty of better things to do.
 		// Make sure to run the runloop that the operation is scheduled on in the
 		// specified mode.
-		while (!gDone)
+		while (!pmCFUtilityDone)
 			CFRunLoopRunInMode(kCFRunLoopDefaultMode, 5.0, true);
 
 		(void)FSPathFileOperationCopyStatus(fileOp, &targetPath, NULL, &err, NULL, NULL);
@@ -992,7 +995,7 @@ OSStatus OperateByPath(Boolean copy, const char *sourcePath, const char *destPat
 			CFRelease(destString);
 	}
 
-	if ((err == noErr) && (gVerbose) && (targetPath)) {
+	if ((err == noErr) && (pmCFUtilityVerbose) && (targetPath)) {
 		printf("targetPath: %s\n", targetPath);
 		free(targetPath);
 	}
@@ -1008,7 +1011,7 @@ OSStatus OperateByRef(Boolean copy, const char *sourcePath, const char *destPath
 	FSFileOperationRef fileOp;
 	CFStringRef        destString = NULL;
 
-	gDone = false;
+	pmCFUtilityDone = false;
 	err   = FSPathMakeRef((UInt8 *)sourcePath, &srcRef, NULL);
 	require_noerr(err, FSPathMakeRefsourceFailed);
 	err = FSPathMakeRef((UInt8 *)destPath, &destDirRef, NULL);
@@ -1016,7 +1019,7 @@ OSStatus OperateByRef(Boolean copy, const char *sourcePath, const char *destPath
 
 	if (destName) {
 		destString = CFStringCreateWithCString(kCFAllocatorDefault, destName, kCFStringEncodingUTF8);
-		if ((destString == NULL) && (gVerbose))
+		if ((destString == NULL) && (pmCFUtilityVerbose))
 			fprintf(stderr, "Could not create destString for %s, using NULL\n", destName);
 	}
 
@@ -1045,7 +1048,7 @@ OSStatus OperateByRef(Boolean copy, const char *sourcePath, const char *destPath
 		// In a real application there should be plenty of better things to do.
 		// Make sure to run the runloop that the operation is scheduled on in the
 		// specified mode.
-		while (!gDone)
+		while (!pmCFUtilityDone)
 			CFRunLoopRunInMode(kCFRunLoopDefaultMode, 5.0, true);
 
 		(void)FSFileOperationCopyStatus(fileOp, &target, NULL, &err, NULL, NULL);
@@ -1068,9 +1071,9 @@ OSStatus OperateByRef(Boolean copy, const char *sourcePath, const char *destPath
 			CFRelease(destString);
 	}
 
-	if ((err == noErr) && (gVerbose)) {
+	if ((err == noErr) && (pmCFUtilityVerbose)) {
 		printf("target: ");
-		PrintFSRef(&target);
+//		PrintFSRef(&target);
 	}
 
 	FSFileOperationCreateFailed:

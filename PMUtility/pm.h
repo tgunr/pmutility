@@ -58,11 +58,11 @@ void pmMSG(const char *function,  int inLevel, NSString * format, ...);
 #define PMLOGTEST(...) PMLOGWITHLEVEL(PMLogLevelTest, __VA_ARGS__)
 #define PMLOGEMERG(...) PMLOGWITHLEVEL(PMLogLevelEmerg, __VA_ARGS__)
 #define PMLOGALERT(...) PMLOGWITHLEVEL(PMLogLevelAlert, __VA_ARGS__)
-#define PMLOGCRITICAL(...) PMLOGWITHLEVEL(PMLogLevelTest, __VA_ARGS__)
-#define PMLOGERROR(...) PMLOGWITHLEVEL(PMLogLevelCritical, __VA_ARGS__)
-#define PMLOGWARNING(...) PMLOGWITHLEVEL(PMLogLevelError, __VA_ARGS__)
-#define PMLOGNOTICE(...) PMLOGWITHLEVEL(PMLogLevelWarning, __VA_ARGS__)
-#define PMLOGINFO(...) PMLOGWITHLEVEL(PMLogLevelNotice, __VA_ARGS__)
+#define PMLOGCRITICAL(...) PMLOGWITHLEVEL(PMLogLevelCritical, __VA_ARGS__)
+#define PMLOGERROR(...) PMLOGWITHLEVEL(PMLogLevelError, __VA_ARGS__)
+#define PMLOGWARNING(...) PMLOGWITHLEVEL(PMLogLevelWarning, __VA_ARGS__)
+#define PMLOGNOTICE(...) PMLOGWITHLEVEL(PMLogLevelNotice, __VA_ARGS__)
+#define PMLOGINFO(...) PMLOGWITHLEVEL(PMLogLevelInfo, __VA_ARGS__)
 #define PMLOGDEBUG(...) PMLOGWITHLEVEL(PMLogLevelDebug, __VA_ARGS__)
 
 void pmLOGSetVerbose(int value);

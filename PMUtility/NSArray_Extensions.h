@@ -5,7 +5,6 @@
 
 -(BOOL)containsObjectIdenticalTo:(id)object;
 
--(NSArray*)arrayWithSubTrees;
 
 -(NSArray*)arrayOfURLsFromPaths;
 -(NSArray*)arrayOfPathsFromURLs;
