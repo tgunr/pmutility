@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		757F4F9C15FCF709008753DA /* PMUtility Aggragate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 757F4F9D15FCF709008753DA /* Build configuration list for PBXAggregateTarget "PMUtility Aggragate" */;
+			buildPhases = (
+			);
+			dependencies = (
+				757F4FA115FCF715008753DA /* PBXTargetDependency */,
+				757F4FA315FCF715008753DA /* PBXTargetDependency */,
+			);
+			name = "PMUtility Aggragate";
+			productName = "PMUtility Aggragate";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		7522193615E84F920003E5B9 /* pmNSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22B14DF29E000613F39 /* pmNSUtility.m */; };
 		7535D1D314DF240C00613F39 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D1D214DF240C00613F39 /* Cocoa.framework */; };
@@ -46,6 +61,23 @@
 		754C47E815DC2DF100316C67 /* pm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22714DF29E000613F39 /* pm.m */; };
 		754C47F515DC2FA500316C67 /* pmCFUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22914DF29E000613F39 /* pmCFUtility.c */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		757F4FA015FCF715008753DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7535D1C514DF240C00613F39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7535D1CE14DF240C00613F39;
+			remoteInfo = PMUtility;
+		};
+		757F4FA215FCF715008753DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7535D1C514DF240C00613F39 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 754C47E615DC2DF100316C67;
+			remoteInfo = pmutility;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7535D1CF14DF240C00613F39 /* PMUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PMUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,6 +351,7 @@
 			targets = (
 				7535D1CE14DF240C00613F39 /* PMUtility */,
 				754C47E615DC2DF100316C67 /* pmutility */,
+				757F4F9C15FCF709008753DA /* PMUtility Aggragate */,
 			);
 		};
 /* End PBXProject section */
@@ -368,6 +401,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		757F4FA115FCF715008753DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7535D1CE14DF240C00613F39 /* PMUtility */;
+			targetProxy = 757F4FA015FCF715008753DA /* PBXContainerItemProxy */;
+		};
+		757F4FA315FCF715008753DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 754C47E615DC2DF100316C67 /* pmutility */;
+			targetProxy = 757F4FA215FCF715008753DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		7535D1DB14DF240C00613F39 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -384,7 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -411,7 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -482,6 +528,20 @@
 			};
 			name = Release;
 		};
+		757F4F9E15FCF709008753DA /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Development;
+		};
+		757F4F9F15FCF709008753DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -511,6 +571,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		757F4F9D15FCF709008753DA /* Build configuration list for PBXAggregateTarget "PMUtility Aggragate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				757F4F9E15FCF709008753DA /* Development */,
+				757F4F9F15FCF709008753DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

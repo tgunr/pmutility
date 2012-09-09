@@ -762,7 +762,7 @@ static Boolean pmCFUtilityVerbose;
 
 void statusCallbackPath(FSFileOperationRef fileOp, const char *currentItem, FSFileOperationStage stage, OSStatus error, CFDictionaryRef statusDictionary, void *info) {
 	if (pmCFUtilityVerbose) {
-		printf("statusCallback called: stage: %ld, Error: %ld\n", stage, error);
+		printf("statusCallback called: stage: %ui, Error: %i\n", (unsigned int)stage, (int)error);
 		if (currentItem)
 			printf("\tcurrentItem: %s\n", currentItem);
 
@@ -824,7 +824,7 @@ void statusCallbackPath(FSFileOperationRef fileOp, const char *currentItem, FSFi
 
 void statusCallback(FSFileOperationRef fileOp, const FSRef *currentItem, FSFileOperationStage stage, OSStatus error, CFDictionaryRef statusDictionary, void *info) {
 	if (pmCFUtilityVerbose) {
-		printf("statusCallback called: stage: %ld, Error: %ld\n", stage, error);
+		printf("statusCallback called: stage: %d, Error: %d\n", (unsigned int)stage, (int)error);
 //		if (currentItem)
 //			PrintFSRef(currentItem);
 
