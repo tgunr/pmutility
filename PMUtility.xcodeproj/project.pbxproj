@@ -426,6 +426,68 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7518E23215FD01B0009B9229 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LD_OPENMP_FLAGS = "-fopenmp";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx10.7;
+				SYMROOT = ../build;
+			};
+			name = Debug;
+		};
+		7518E23315FD01B0009B9229 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PMUtility/PMUtility-Prefix.pch";
+				INFOPLIST_FILE = "PMUtility/PMUtility-Info.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		7518E23415FD01B0009B9229 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7518E23515FD01B0009B9229 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
 		7535D1E214DF240C00613F39 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -550,6 +612,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7535D1E214DF240C00613F39 /* Development */,
+				7518E23215FD01B0009B9229 /* Debug */,
 				7535D1E314DF240C00613F39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -559,6 +622,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7535D1E514DF240C00613F39 /* Development */,
+				7518E23315FD01B0009B9229 /* Debug */,
 				7535D1E614DF240C00613F39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -568,6 +632,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				754C47EC15DC2DF100316C67 /* Development */,
+				7518E23415FD01B0009B9229 /* Debug */,
 				754C47ED15DC2DF100316C67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -577,9 +642,11 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				757F4F9E15FCF709008753DA /* Development */,
+				7518E23515FD01B0009B9229 /* Debug */,
 				757F4F9F15FCF709008753DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -17,12 +17,13 @@ Boolean			gVerboseStack[256];
 UInt64			startTime = 0;
 
 // PMLOGSetVerbose sets a new debug level
-void pmLOGSetVerbose(int value) 
-    { gDebugLevel = value; }
+void PMLOG_SetVerbose(enum PMLOGLevel value) {
+    gDebugLevel = value;
+}
 
 // PMLOGPushVerbose sets a new debug setting and saves the previous one
 // Use this to reduce debug output inside loops etc.
-void pmLOGPushVerbose(int value) {
+void PMLOG_PushVerbose(enum PMLOGLevel value) {
 	gVerboseStack[gVerboseIndex] = gDebugLevel;
 	gVerboseIndex++;
 	if (gVerboseIndex > 256)
@@ -31,7 +32,7 @@ void pmLOGPushVerbose(int value) {
 }
 
 // PMLOGPopVerbose restores the previous debug setting
-void pmLOGPopVerbose(void) {
+void PMLOG_PopVerbose(void) {
 	gVerboseIndex--;
 	if (gVerboseIndex < 0)
 		gVerboseIndex = 0;
@@ -80,24 +81,20 @@ NSString * pmLogLevelString(int inLevel) {
 }
 
 static NSString* 
-pmLOGSelfFormat(id self, NSString * format) {
+pmLOGSelfFormat(id self) {
 	if(self != nil)
 	{
-		return [NSString stringWithFormat:@"PMSELF:(%@) %@", self, format];
+		return [NSString stringWithFormat:@"PMSELF:(%@)", self];
 	}
 	else
 	{
-		return [NSString stringWithFormat:@"PMNOSELF: %@", format];
+		return [NSString stringWithFormat:@"PMNOSELF"];
 	}
 }
 
-void pmLOGSELF(id self, NSString * format, ...)
-{
-	NSString * finalFormat = pmLOGSelfFormat(self, format);
-	va_list ap;
-	va_start(ap, format);
-	NSLogv(finalFormat, ap);
-	va_end(ap);
+void pmLOGSELF(id myself) {
+	NSString * finalFormat = pmLOGSelfFormat(myself);
+	NSLog(@"%@",finalFormat);
 }
 
 void pmMSG(const char *function,  int inLevel, NSString * format, ...)
