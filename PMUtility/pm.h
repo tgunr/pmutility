@@ -48,7 +48,10 @@ void pmMSG(const char *function,  int inLevel, NSString * format, ...);
 
 //#define PMLOG(ARGS...) PM_LogInternal(__FILE__, __PRETTY_FUNCTION__, ## ARGS)
 #define PMLOG_SELF pmLOGSELF(self)
+
 #define PMLOG(...) pmLOG(__FILE__, __PRETTY_FUNCTION__, __VA_ARGS__)
+#define PMLOGWITHLEVEL(level, ...) pmLOG(__FILE__, __PRETTY_FUNCTION__, level, __VA_ARGS__)
+
 #define PMLOG_ERR(err, ...) if (err) pmERR(__FILE__, __PRETTY_FUNCTION__, (int)err, __VA_ARGS__)
 #define PMLOG_SYM(symbol) pmLOG(__FILE__, __PRETTY_FUNCTION__, PMLogLevelTest, @#symbol ": %@", symbol)
 #define PMLOG_VALUE(value) pmLOG(__FILE__, __PRETTY_FUNCTION__, PMLogLevelTest, @#value ": %d", (int)value)
@@ -56,7 +59,7 @@ void pmMSG(const char *function,  int inLevel, NSString * format, ...);
 #define PMLOG_NOTE(note) pmLOG(__FILE__, __PRETTY_FUNCTION__, PMLogLevelTest, @"NOTE: %@", note)
 #define PMLOG_HERE pmLOG(__FILE__, __PRETTY_FUNCTION__, PMLogLevelTest, @"")
 #define PMLOG_MSG(...) pmMSG(__PRETTY_FUNCTION__, PMLogLevelTest, __VA_ARGS__)
-#define PMLOG_WITHLEVEL(level, ...) pmLOG(__FILE__, __PRETTY_FUNCTION__, level, __VA_ARGS__)
+
 #define PMLOG_TEST(...) PMLOGWITHLEVEL(PMLogLevelTest, __VA_ARGS__)
 #define PMLOG_EMERG(...) PMLOGWITHLEVEL(PMLogLevelEmerg, __VA_ARGS__)
 #define PMLOG_ALERT(...) PMLOGWITHLEVEL(PMLogLevelAlert, __VA_ARGS__)
