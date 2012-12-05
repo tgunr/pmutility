@@ -55,6 +55,12 @@ CFDataRef	CFStringCreateSHA1Digest( CFAllocatorRef inAllocator, CFStringRef inSt
 CFStringRef	CFDataCreateHexString( CFAllocatorRef inAllocator, CFDataRef inData );
 CFDataRef	CFStringCreateDataForHex( CFAllocatorRef inAllocator, CFStringRef inHexString );
 
+void statusCallbackPath(FSFileOperationRef fileOp, const char *currentItem, FSFileOperationStage stage, OSStatus error, CFDictionaryRef statusDictionary, void *info);
+void statusCallback(FSFileOperationRef fileOp, const FSRef *currentItem, FSFileOperationStage stage, OSStatus error, CFDictionaryRef statusDictionary, void *info);
+OSStatus SetAsyncPathOpInMotion(Boolean copy, FSFileOperationRef fileOp, const char *sourcePath, const char *destDirPath, CFStringRef destName, OptionBits flags, FSPathFileOperationStatusProcPtr callback, CFTimeInterval statusChangeInterval, CFStringRef contextString);
+OSStatus SetAsyncOpInMotion(Boolean copy, FSFileOperationRef fileOp, const FSRef *source, const FSRef *destDir, CFStringRef destName, OptionBits flags, FSFileOperationStatusProcPtr callback, CFTimeInterval statusChangeInterval, CFStringRef contextString);
+OSStatus OperateByPath(Boolean copy, const char *sourcePath, const char *destPath, const char *destName, CFTimeInterval statusInterval, OptionBits options, Boolean async, CFStringRef contextString);
+OSStatus OperateByRef(Boolean copy, const char *sourcePath, const char *destPath, const char *destName, CFTimeInterval statusInterval, OptionBits options, Boolean async, CFStringRef contextString);
 #endif
 
 
