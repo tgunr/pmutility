@@ -12,8 +12,6 @@
 #import <PMUtility/pm.h>
 #import <PMUtility/pmCFUtility.h>
 #import <PMUtility/pmNSUtility.h>
-#import <PMUtility/BTHIconResources.h>
-#import <PMUtility/ImageAndTextCell.h>
 #import <PMUtility/NSDate_Extensions.h>
 #import <PMUtility/NSApplication_Extensions.h>
 #import <PMUtility/NSArray_Extensions.h>

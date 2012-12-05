@@ -6,13 +6,7 @@
 //  Copyright 2008 PolyMicro Systems. All rights reserved.
 //
 
-#ifdef PMUtility
 #import <Cocoa/Cocoa.h>
-#endif
-
-#ifdef PMUtilityIOS
-#import <UIKit/UIKit.h>
-#endif
 
 @interface NSData(StandardDigest)
 

@@ -59,7 +59,7 @@
 
 @end
 
-@implementation PMSUtility
+@implementation PMUtility
 
 @end
 

@@ -8,6 +8,6 @@
 #import <PMUtility/NSApplication_Extensions.h>
 #import "PMCFUtility.h"
 
-@implementation NSApplication(PMSExtensions)
+@implementation NSApplication(PMExtensions)
 
-@end		//NSApplication(PMSExtensions)
+@end		//NSApplication(PMExtensions)

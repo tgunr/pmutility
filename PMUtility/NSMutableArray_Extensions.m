@@ -42,8 +42,9 @@
 	return self;
 }
 
--(id)addUniqueObjectsFromArray:(NSArray*)newArray
-{ return [self insertUniqueObjectsFromArray:newArray atIndex:[self count]]; }
+-(id)addUniqueObjectsFromArray:(NSArray*)newArray {
+    return [self insertUniqueObjectsFromArray:newArray atIndex:[self count]];
+}
 
 @end		//	NSMutableArray (PMExtension)
 

@@ -85,7 +85,7 @@ const	time_t	kTimeOneDayInSeconds = 86400.0f;
 
 -(float)rankWithDate:(id)other withOptions:(NSMutableDictionary*)options
 {
-	CFDateRef	ourDate = (__bridge CFDateRef)self;
+	CFDateRef	ourDate = (CFDateRef)self;
 	
 	CFAbsoluteTime  distantTime = (ourDate!=NULL) ? CFDateGetAbsoluteTime(ourDate) : 0.0;
 	CFAbsoluteTime	anchorTime = 0.0;
@@ -105,7 +105,7 @@ const	time_t	kTimeOneDayInSeconds = 86400.0f;
 		
 		if( (other != nil) && (ourDate != nil) )
 		{
-			anchorTime = CFDateGetAbsoluteTime((__bridge CFDateRef)other);
+			anchorTime = CFDateGetAbsoluteTime((CFDateRef)other);
 			limitTime = anchorTime + daySeconds;
 			//otherDate = (CFDateRef)[(NSDate*)other addTimeInterval:(NSTimeInterval)daySeconds];
 			

@@ -14,15 +14,20 @@ const float sliderAnimationSeconds = 0.8f; 	// This is how long sliders should t
 
 static NSString *endValueKey = @"endValue", *startValueKey = @"startValue", *startDateKey = @"startDate", *stopOnTicksKey = @"ticksOnly";
 
-static NSMutableDictionary *animationTimersDictionary;  //This is where we keep track of timers, for when we need to remove them.
+static NSMutableDictionary *ourAnimationTimersDictionary;  //This is where we keep track of timers, for when we need to remove them.
 
 @implementation NSSlider (SliderAnimation)
   // When a method is very short and very obvious, I like to make it a one-liner.  These are just covers for sending the messages along to the cell.
 - (IBAction) animateToFloatValueFrom:sender { [[self cell] animateToFloatValueFrom: sender];}
+- (IBAction) animateToIntValueFrom:sender { [[self cell] animateToIntValueFrom: sender];}
 
 - (void) animateToFloatValue:(float) newValue allowsTicksOnly:(BOOL)ticksOnly
 { 
 	[[self cell] animateToFloatValue: newValue allowsTicksOnly:ticksOnly];
+}
+- (void) animateToIntValue:(int) newValue allowsTicksOnly:(BOOL)ticksOnly
+{
+	[[self cell] animateToIntValue: newValue allowsTicksOnly:ticksOnly];
 }
 
 @end
@@ -30,7 +35,8 @@ static NSMutableDictionary *animationTimersDictionary;  //This is where we keep 
 @interface NSSliderCell (SliderAnimationPrivate)  
 
 - (void) stopAnimatingDuringTransition:(BOOL)wasAnimating; 
-- (void) doAnimationStep: sender;  // This should only ever be sent by the NSTimer created in -animateToFloatValue:.
+- (void) doFloatAnimationStep: sender;  // This should only ever be sent by the NSTimer created in -animateToFloatValue:.
+- (void) doIntAnimationStep: sender;  // This should only ever be sent by the NSTimer created in -animateToIntValue:.
 - (void) stopAnimating;   // Used to clean up any stray timers.
 
 @end
@@ -40,16 +46,21 @@ static NSMutableDictionary *animationTimersDictionary;  //This is where we keep 
 	
 + (NSMutableDictionary *) animationTimersDictionary	
 	{
-	if (!animationTimersDictionary)   // Create the dictionary if we haven't already.
-		animationTimersDictionary = [NSMutableDictionary dictionary];
-	return animationTimersDictionary;
+	if (!ourAnimationTimersDictionary)   // Create the dictionary if we haven't already.
+		ourAnimationTimersDictionary = [[NSMutableDictionary dictionary] retain];
+	return ourAnimationTimersDictionary;
 	}
 	
-- (IBAction) animateToFloatValueFrom:sender // Action method 
+- (IBAction) animateToFloatValueFrom:sender // Action method
   { 
 	  [self animateToFloatValue:[sender floatValue] allowsTicksOnly:NO];   
   }
   
+- (IBAction) animateToIntValueFrom:sender // Action method
+{
+    [self animateToIntValue:[sender intValue] allowsTicksOnly:NO];
+}
+
 - (void) animateToFloatValue:(float) newValue allowsTicksOnly:(BOOL)ticksOnly
 	{
 	NSTimer 
@@ -87,7 +98,7 @@ static NSMutableDictionary *animationTimersDictionary;  //This is where we keep 
    timer = // Make a new timer..
 	  [NSTimer timerWithTimeInterval:sliderAnimationInterval // how often it fires
 			target:self   // what object it will message when it fires
-			selector:@selector(doAnimationStep:) // What method will it invoke when it fires
+			selector:@selector(doFloatAnimationStep:) // What method will it invoke when it fires
 			userInfo: animationInfo  // The NSDictionary we just built above..
 			repeats:YES];  
 	[[[self class] animationTimersDictionary] setObject:timer forKey:[self description]];  // Store a reference to this timer, so that -stopAnimating can find it.
@@ -99,14 +110,61 @@ static NSMutableDictionary *animationTimersDictionary;  //This is where we keep 
 		[[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 	}
 
+- (void) animateToIntValue:(int) newValue allowsTicksOnly:(BOOL)ticksOnly
+{
+	NSTimer
+    *timer;
+    
+    NSTimer*	oldTimer = nil;
+    
+	NSDictionary    *animationInfo;   // Everything we need to know while animating..
+	NSDictionary	*existingInfo = nil;
+	
+	if( [[[self class] animationTimersDictionary] count] > 0 )
+	{
+		oldTimer = [[[self class] animationTimersDictionary] valueForKey:[self description]];
+		if( oldTimer != nil )
+            existingInfo = [oldTimer userInfo];
+		if( existingInfo != nil ) {
+			if( [[existingInfo objectForKey:endValueKey] intValue] == newValue )		// if we already headed there don't interrupt
+			{
+				NSLog(@"Endpoint exists!");
+				return;
+			}
+			
+			[self stopAnimatingDuringTransition:YES];  // This ensures that we don't get multiple timers trying to move the slider at the same time..
+		}
+	}
+	
+    /*   NSTimer has a "userInfo" method that can hand us back whatever information we want to associate with a timer.  In this case, we'll use a dictionary  to hold multiple parameters.  To do the math for our spiffy ease-in/ease-out motion smoothing, at each step in the animation we need to know what value we started with, what value we're aiming for, and when we started to animate. */
+	animationInfo =
+    [NSDictionary dictionaryWithObjectsAndKeys:
+     [NSNumber numberWithInt:newValue], endValueKey,
+     [NSNumber numberWithBool:ticksOnly], stopOnTicksKey,
+     [NSNumber numberWithInt:[self intValue]], startValueKey,
+     [NSDate date], startDateKey, nil];
+    
+    timer = // Make a new timer..
+    [NSTimer timerWithTimeInterval:sliderAnimationInterval // how often it fires
+                            target:self   // what object it will message when it fires
+                          selector:@selector(doIntAnimationStep:) // What method will it invoke when it fires
+                          userInfo: animationInfo  // The NSDictionary we just built above..
+                           repeats:YES];
+	[[[self class] animationTimersDictionary] setObject:timer forKey:[self description]];  // Store a reference to this timer, so that -stopAnimating can find it.
+    
+    // some are setup to stop on ticks which is very unappelaing.
+    [self setAllowsTickMarkValuesOnly:NO];
+    
+    // start up timer for tracking durin menus thank you
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+}
+
 @end 
 
 @implementation NSSliderCell (SliderAnimationPrivate)
  
-- (void) doAnimationStep:sender
-  {
-  id
-	 parms = [sender userInfo];  // This the dictionary that we created above in -animateToFloatValue:
+- (void) doFloatAnimationStep:sender {
+  id parms = [sender userInfo];  // This the dictionary that we created above in -animateToFloatValue:
 	 
   id
 	 controlView = [self controlView];  // The view that this cell lives in..
@@ -134,22 +192,46 @@ static NSMutableDictionary *animationTimersDictionary;  //This is where we keep 
   }
 }
 
-- (void) stopAnimatingDuringTransition:(BOOL)wasAnimating  //This method removes any NSTimer that's trying to move the slider.
-  {
-	NSString 
-		*dictKey = [self description];
-		
-	NSMutableDictionary 
-		*timers = [[self class] animationTimersDictionary];
-		
-	NSTimer 
-		*oldTimer;
+- (void) doIntAnimationStep:sender {
+    id parms = [sender userInfo];  // This the dictionary that we created above in -animateToFloatValue:
+    
+    id
+    controlView = [self controlView];  // The view that this cell lives in..
+    
+	int
+    t, startValue, endValue, currentValue;
+    
+    endValue = [[parms valueForKey:endValueKey] intValue];
+    startValue = [[parms valueForKey:startValueKey] intValue];
+    
+    t = MIN(1 , abs([[parms valueForKey:startDateKey] timeIntervalSinceNow]) / sliderAnimationSeconds);  //Looking for a value from zero to one..
+//    t = easeFunction(t);  // comment this out to make it linear.
+    
+    currentValue = startValue + (t * (endValue - startValue));
+    [self setIntValue: currentValue];
+    
+    if ([controlView isContinuous])  // When the slider moves, the target should get a message..
+        [controlView sendAction:[self action] to:[self target]];
 	
-	BOOL
-	  stopOnTickValue = NO;
+    if (abs(currentValue - endValue) <= 1)  // allow a bit of "servo jitter" to allow for floating-point messiness
+    {
+        [self stopAnimatingDuringTransition:NO];
+        [self setIntValue:endValue];
+        [controlView sendAction:[self action] to:[self target]];  // Make it act just like the user did the moving.
+    }
+}
+
+- (void) stopAnimatingDuringTransition:(BOOL)wasAnimating  { //This method removes any NSTimer that's trying to move the slider.
+    
+	NSString  *dictKey = [self description];
+		
+	NSMutableDictionary *timers = [[self class] animationTimersDictionary];
+		
+	NSTimer *oldTimer = [timers objectForKey:dictKey];
+	
+	BOOL stopOnTickValue = NO;
 	  
-	if ((oldTimer = [timers objectForKey:dictKey]))
-	  {
+	if (oldTimer) {
 		stopOnTickValue = [[[oldTimer userInfo] valueForKey:stopOnTicksKey] boolValue];
 		[oldTimer invalidate];  // If there already was a timer, clean it up.
 		[timers removeObjectForKey:dictKey]; 
@@ -157,8 +239,7 @@ static NSMutableDictionary *animationTimersDictionary;  //This is where we keep 
 
 	if( !wasAnimating )
 		[(NSSlider*)[self controlView] setAllowsTickMarkValuesOnly:stopOnTickValue];
-
-	}
+}
 
 - (void) stopAnimating
 	{ [self stopAnimatingDuringTransition:NO]; }

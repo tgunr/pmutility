@@ -46,7 +46,7 @@
 #import "pmCFUtility.h"
 #import "pmNSUtility.h"
 
-@implementation NSArray (PMSExtensions)
+@implementation NSArray (PMExtensions)
 
 -(BOOL)containsObjectIdenticalTo: (id)obj { 
     return [self indexOfObjectIdenticalTo: obj]!=NSNotFound; 
@@ -103,11 +103,12 @@
 		while ( (workPath = (NSString*)[workEnum nextObject]) ) {
 			workURL = [NSURL fileURLWithPath:workPath];
 			if( workURL != nil )
-				if( CFURLConfromsToUTIs( kCFAllocatorDefault, (__bridge CFURLRef)workURL, (__bridge CFArrayRef)theUTIs, NULL ) )
+				if( CFURLConfromsToUTIs( kCFAllocatorDefault, (CFURLRef)workURL, (CFArrayRef)theUTIs, NULL ) )
 					[workArray addObject:( saveURLs == YES ) ? workURL : [NSString stringWithString:workPath]];
 		}
 	
 		outArray = [NSArray arrayWithArray:workArray];
+		[workArray release];
 	}
 	
 	return outArray;

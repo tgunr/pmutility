@@ -23,12 +23,12 @@
 	
 	while ( (infoKey = [infoEnum nextObject]) ) {
 		infoItem = [self objectForKey:infoKey];
-		if( CFGetTypeID((__bridge CFTypeRef)infoItem) == CFBooleanGetTypeID() )
-			[infoString appendString:[CFBooleanToNSNumber((__bridge CFBooleanRef)infoItem) md5String]];
-		else if( CFGetTypeID((__bridge CFTypeRef)infoItem) == CFUUIDGetTypeID() )
-			[infoString appendString:[(__bridge NSString*)CFUUIDCreateString(kCFAllocatorDefault,(__bridge CFUUIDRef)infoItem) md5String]];
-		else if( CFGetTypeID((__bridge CFTypeRef)infoItem) == CFURLGetTypeID() )
-			[infoString appendString:[(__bridge NSString*)CFURLGetString((__bridge CFURLRef)infoItem) md5String]];
+		if( CFGetTypeID((CFTypeRef)infoItem) == CFBooleanGetTypeID() )
+			[infoString appendString:[CFBooleanToNSNumber((CFBooleanRef)infoItem) md5String]];
+		else if( CFGetTypeID((CFTypeRef)infoItem) == CFUUIDGetTypeID() )
+			[infoString appendString:[(NSString*)CFUUIDCreateString(kCFAllocatorDefault,( CFUUIDRef)infoItem) md5String]];
+		else if( CFGetTypeID((CFTypeRef)infoItem) == CFURLGetTypeID() )
+			[infoString appendString:[(NSString*)CFURLGetString((CFURLRef)infoItem) md5String]];
 		else 
             [infoString appendString:[infoItem md5String]];
 		[infoString appendString:[infoKey md5String]];
