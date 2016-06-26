@@ -11,7 +11,7 @@
 #include <sys/stat.h>
 
 // MD5 includes
-#include <openssl/evp.h>
+//#include <openssl/evp.h>
 #include <CoreServices/CoreServices.h>
 #include <CoreFoundation/CoreFoundation.h>
 #include <unistd.h>
@@ -657,56 +657,56 @@ Boolean CFAbsoluteTimeBetweenTimes(CFAbsoluteTime lowTime, CFAbsoluteTime unknow
 
 //	Internal headers
 
-CFDataRef CFDataCreateEVPDigest(CFAllocatorRef inAllocator, CFDataRef inData, const EVP_MD *inDigestType);
+//CFDataRef CFDataCreateEVPDigest(CFAllocatorRef inAllocator, CFDataRef inData, const EVP_MD *inDigestType);
+//
+//CFDataRef CFStringCreateEVPDigest(CFAllocatorRef inAllocator, CFStringRef inString, const EVP_MD *inDigestType);
+//
+//
+//CFDataRef CFDataCreateEVPDigest(CFAllocatorRef inAllocator, CFDataRef inData, const EVP_MD *inDigestType) {
+//	//	Compute an EVP digest
+//	//	See <openssl/evp.h> for details 
+//
+//	EVP_MD_CTX    mdctx;
+//	unsigned char md_value[EVP_MAX_MD_SIZE];
+//	unsigned int  md_len;
+//
+//	if (inData == NULL)
+//		return (CFDataRef)NULL;
+//
+//	EVP_DigestInit(&mdctx, inDigestType);
+//	EVP_DigestUpdate(&mdctx, CFDataGetBytePtr(inData), CFDataGetLength(inData));
+//	EVP_DigestFinal(&mdctx, md_value, &md_len);
+//	return CFDataCreate(inAllocator, md_value, md_len);
+//}
 
-CFDataRef CFStringCreateEVPDigest(CFAllocatorRef inAllocator, CFStringRef inString, const EVP_MD *inDigestType);
+//CFDataRef CFDataCreateMD5Digest(CFAllocatorRef inAllocator, CFDataRef inData) {
+//	return CFDataCreateEVPDigest(inAllocator, inData, EVP_md5());
+//}
+//
+//CFDataRef CFDataCreateSHA1Digest(CFAllocatorRef inAllocator, CFDataRef inData) {
+//	return CFDataCreateEVPDigest(inAllocator, inData, EVP_sha1());
+//}
 
+//CFDataRef CFStringCreateEVPDigest(CFAllocatorRef inAllocator, CFStringRef inString, const EVP_MD *inDigestType) {
+//	CFDataRef theStringData = CFStringCreateExternalRepresentation(inAllocator, inString, kCFStringEncodingUTF8, 0);
+//	CFDataRef theDigest     = NULL;
+//
+//	if (theStringData == NULL)
+//		return theDigest;
+//
+//	theDigest = CFDataCreateEVPDigest(inAllocator, theStringData, inDigestType);
+//
+//	CFRelease(theStringData);
+//	return theDigest;
+//}
 
-CFDataRef CFDataCreateEVPDigest(CFAllocatorRef inAllocator, CFDataRef inData, const EVP_MD *inDigestType) {
-	//	Compute an EVP digest
-	//	See <openssl/evp.h> for details 
-
-	EVP_MD_CTX    mdctx;
-	unsigned char md_value[EVP_MAX_MD_SIZE];
-	unsigned int  md_len;
-
-	if (inData == NULL)
-		return (CFDataRef)NULL;
-
-	EVP_DigestInit(&mdctx, inDigestType);
-	EVP_DigestUpdate(&mdctx, CFDataGetBytePtr(inData), CFDataGetLength(inData));
-	EVP_DigestFinal(&mdctx, md_value, &md_len);
-	return CFDataCreate(inAllocator, md_value, md_len);
-}
-
-CFDataRef CFDataCreateMD5Digest(CFAllocatorRef inAllocator, CFDataRef inData) {
-	return CFDataCreateEVPDigest(inAllocator, inData, EVP_md5());
-}
-
-CFDataRef CFDataCreateSHA1Digest(CFAllocatorRef inAllocator, CFDataRef inData) {
-	return CFDataCreateEVPDigest(inAllocator, inData, EVP_sha1());
-}
-
-CFDataRef CFStringCreateEVPDigest(CFAllocatorRef inAllocator, CFStringRef inString, const EVP_MD *inDigestType) {
-	CFDataRef theStringData = CFStringCreateExternalRepresentation(inAllocator, inString, kCFStringEncodingUTF8, 0);
-	CFDataRef theDigest     = NULL;
-
-	if (theStringData == NULL)
-		return theDigest;
-
-	theDigest = CFDataCreateEVPDigest(inAllocator, theStringData, inDigestType);
-
-	CFRelease(theStringData);
-	return theDigest;
-}
-
-CFDataRef CFStringCreateMD5Digest(CFAllocatorRef inAllocator, CFStringRef inString) {
-	return CFStringCreateEVPDigest(inAllocator, inString, EVP_md5());
-}
-
-CFDataRef CFStringCreateSHA1Digest(CFAllocatorRef inAllocator, CFStringRef inString) {
-	return CFStringCreateEVPDigest(inAllocator, inString, EVP_sha1());
-}
+//CFDataRef CFStringCreateMD5Digest(CFAllocatorRef inAllocator, CFStringRef inString) {
+//	return CFStringCreateEVPDigest(inAllocator, inString, EVP_md5());
+//}
+//
+//CFDataRef CFStringCreateSHA1Digest(CFAllocatorRef inAllocator, CFStringRef inString) {
+//	return CFStringCreateEVPDigest(inAllocator, inString, EVP_sha1());
+//}
 
 
 CFStringRef CFDataCreateHexString(CFAllocatorRef inAllocator, CFDataRef inData) {
