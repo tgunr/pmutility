@@ -11,12 +11,12 @@
 @implementation NSNumber(PMSExtensions)
 
 +(NSNumber*)zero
-{	return [NSNumber numberWithInt:0];	}
+{	return @0;	}
 
 -(NSString*)md5String
-{	return [[self stringValue] md5String];	}
+{	return [self.stringValue md5String];	}
 
 -(NSNumber*)addToNumber:(NSNumber*)otherNum
-{	return [NSNumber numberWithDouble:([self doubleValue] + [otherNum doubleValue])];	}
+{	return @(self.doubleValue + otherNum.doubleValue);	}
 
 @end		//	NSNumber(StandardDigest)

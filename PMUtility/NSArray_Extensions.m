@@ -54,7 +54,7 @@
 
 -(NSArray*)arrayOfURLsFromPaths
 {
-	NSInteger		pathCount = [self count];
+	NSInteger		pathCount = self.count;
 	NSInteger		index = 0;
 	NSMutableArray*	urlArray = [NSMutableArray arrayWithCapacity:pathCount];
 	NSURL*			workURL = nil;
@@ -62,7 +62,7 @@
 	
 	//	Create array of urls from array of paths
 	for( index=0; index < pathCount; index++ ) {
-		workURL = [[NSURL alloc] initFileURLWithPath:[self objectAtIndex:index]];
+		workURL = [[NSURL alloc] initFileURLWithPath:self[index]];
 		if( workURL )
 			[urlArray addObject:workURL];
 	}
@@ -73,7 +73,7 @@
 
 -(NSArray*)arrayOfPathsFromURLs
 {
-	NSInteger		pathCount = [self count];
+	NSInteger		pathCount = self.count;
 	NSInteger		index = 0;
 	NSMutableArray*	urlArray = [NSMutableArray arrayWithCapacity:pathCount];
 	NSString*		workString = nil;
@@ -81,7 +81,7 @@
 	
 	//	Create array of urls from array of paths
 	for( index=0; index < pathCount; index++ ) {
-		workString = [[NSString alloc] initWithString:[[self objectAtIndex:index] path]];
+		workString = [[NSString alloc] initWithString:[self[index] path]];
 		if( workString )
 			[urlArray addObject:workString];
 	}
@@ -118,14 +118,14 @@
 {
 	id			outObject = nil;
 	float		randFloat = (float)( random() / (pow(2, 31) - 1) );
-	NSInteger	selfCount = [self count];
+	NSInteger	selfCount = self.count;
 	NSInteger	randIndex = (NSInteger)(randFloat * (float)selfCount);
 	
 	if( randIndex == selfCount )
 		randIndex--;
 	
 	if( selfCount > 0 )
-		outObject = [self objectAtIndex:randIndex];
+		outObject = self[randIndex];
 	
 	return outObject;
 }

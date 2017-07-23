@@ -132,8 +132,8 @@ void pmLOG(const char *file, const char *function,  int inLevel, NSString * form
     else
     {
         NSString *level = pmLogLevelString(inLevel);
-		NSString *pathString = [NSString stringWithCString:file encoding:NSUTF8StringEncoding];
-        const char *fileString = [[pathString lastPathComponent] cStringUsingEncoding: NSUTF8StringEncoding];
+		NSString *pathString = @(file);
+        const char *fileString = [pathString.lastPathComponent cStringUsingEncoding: NSUTF8StringEncoding];
         NSString *finalFormat =  [NSString stringWithFormat:@"%@ %s: %s %@", level, fileString, function, format];
         
         va_list ap;
@@ -144,8 +144,8 @@ void pmLOG(const char *file, const char *function,  int inLevel, NSString * form
 }
 
 void pmERR(const char *file, const char *function, int err, NSString * format, ...) {
-	NSString *pathString = [NSString stringWithCString:file encoding:NSUTF8StringEncoding];
-	const char *fileString = [[pathString lastPathComponent] cStringUsingEncoding: NSUTF8StringEncoding];
+	NSString *pathString = @(file);
+	const char *fileString = [pathString.lastPathComponent cStringUsingEncoding: NSUTF8StringEncoding];
 	NSString *finalFormat =  [NSString stringWithFormat:@"PMERR %s: %s err: %x %@", fileString, function, err, format];
 	
 	va_list ap;

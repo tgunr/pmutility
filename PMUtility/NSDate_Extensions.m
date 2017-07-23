@@ -49,7 +49,7 @@ const	time_t	kTimeOneDayInSeconds = 86400.0f;
 	else 
 	{
 		formatFormatter = [[NSDateFormatter alloc] init];
-		[formatFormatter setDateFormat:dateFormat];
+		formatFormatter.dateFormat = dateFormat;
 	}
 	
 	if( formatFormatter != nil )
@@ -93,10 +93,10 @@ const	time_t	kTimeOneDayInSeconds = 86400.0f;
 	float			rank = 0.0f;
 	NSString*		whichKind = nil;
 	
-	whichKind = (NSString*)[options objectForKey:@"Range"];
+	whichKind = (NSString*)options[@"Range"];
 	
 	if( [whichKind isEqual:@"Day Count"] ) {
-		CFTimeInterval	dayCount = [[options objectForKey:@"Days"] doubleValue];
+		CFTimeInterval	dayCount = [options[@"Days"] doubleValue];
 		CFTimeInterval	daySeconds = dayCount * 86400;
 		
 		if( other == nil ) other = [NSDate date];

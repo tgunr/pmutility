@@ -22,7 +22,7 @@
 	NSMutableString*	infoString = [NSMutableString stringWithString:@""];
 	
 	while ( (infoKey = [infoEnum nextObject]) ) {
-		infoItem = [self objectForKey:infoKey];
+		infoItem = self[infoKey];
 		if( CFGetTypeID((CFTypeRef)infoItem) == CFBooleanGetTypeID() )
 			[infoString appendString:[CFBooleanToNSNumber((CFBooleanRef)infoItem) md5String]];
 		else if( CFGetTypeID((CFTypeRef)infoItem) == CFUUIDGetTypeID() )
@@ -43,10 +43,10 @@
 
 -(void)addEntryFromDictionary:(NSDictionary*)otherDict forKey:(id)otherKey
 {
-	id		otherValue = [otherDict objectForKey:otherKey];
+	id		otherValue = otherDict[otherKey];
 	
 	if( otherValue != nil )
-		[self setObject:otherValue forKey:otherKey];
+		self[otherKey] = otherValue;
 }
 
 @end		//	NSMutableDictionary(PMSExtensions)

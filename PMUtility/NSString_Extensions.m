@@ -58,7 +58,7 @@
 	else {
 		foundRange = [self rangeOfString:other options:findOptions];
 		if( foundRange.length != 0 ) 
-            rank = (float)(foundRange.length  / [self length] );
+            rank = (float)(foundRange.length  / self.length );
 	}
 
 	// NSLog(@"Rank:%f String:%@ Other:%@", rank, self, other);
@@ -68,9 +68,9 @@
 
 +(NSString*)stringFromByteCount:(NSNumber*)inBytes
 {
-	double		bytesLeft = [inBytes doubleValue];
+	double		bytesLeft = inBytes.doubleValue;
 	int			reductionCount = 0;
-	NSArray*	abvrArray = [NSArray arrayWithObjects:@"B", @"KB", @"MB", @"GB", @"TB", @"PB", @"EB", @"ZB", @"YB", nil];
+	NSArray*	abvrArray = @[@"B", @"KB", @"MB", @"GB", @"TB", @"PB", @"EB", @"ZB", @"YB"];
 	
 	while ( bytesLeft > 1024 ) {
 		reductionCount++;
@@ -78,7 +78,7 @@
 		if( reductionCount == 8 ) break;
 	}
 	
-	return [NSString stringWithFormat:@"%.02f %@", bytesLeft, [abvrArray objectAtIndex:reductionCount]];
+	return [NSString stringWithFormat:@"%.02f %@", bytesLeft, abvrArray[reductionCount]];
 }
 
 #define ellipsis @"…"
@@ -92,7 +92,7 @@
     NSMutableString *truncatedString = [[self mutableCopy] autorelease];
 #endif
     
-	NSUInteger selfLength = [self length];
+	NSUInteger selfLength = self.length;
 	
 	// Make sure string is longer than requested length
 	if (selfLength > length)
@@ -113,7 +113,7 @@
 #else
     NSMutableString *truncatedString = [[self mutableCopy] autorelease];
 #endif
-	NSUInteger selfLength = [self length];
+	NSUInteger selfLength = self.length;
 
 	// Make sure string is longer than requested length
 	if (selfLength > length)
@@ -134,7 +134,7 @@
 #else
     NSMutableString *truncatedString = [[self mutableCopy] autorelease];
 #endif
-	NSUInteger selfLength = [self length];
+	NSUInteger selfLength = self.length;
 	if (selfLength > length) {
 		NSRange r;		
 		// compute the ends length

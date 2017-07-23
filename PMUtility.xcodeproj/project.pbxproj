@@ -57,9 +57,10 @@
 		7535D22F14DF29E000613F39 /* pmCFUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22914DF29E000613F39 /* pmCFUtility.c */; };
 		7535D23014DF29E000613F39 /* pmNSUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 7535D22A14DF29E000613F39 /* pmNSUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7535D23114DF29E000613F39 /* pmNSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22B14DF29E000613F39 /* pmNSUtility.m */; };
-		7548266315E8387D00A1AAAB /* libcrypto.0.9.8.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7548266215E8387D00A1AAAB /* libcrypto.0.9.8.dylib */; };
 		754C47E815DC2DF100316C67 /* pm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22714DF29E000613F39 /* pm.m */; };
 		754C47F515DC2FA500316C67 /* pmCFUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22914DF29E000613F39 /* pmCFUtility.c */; };
+		758962CC1F253B28005C9ED8 /* libcrypto.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 758962CB1F253B28005C9ED8 /* libcrypto.1.0.0.dylib */; };
+		758962CD1F253B28005C9ED8 /* libcrypto.1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 758962CB1F253B28005C9ED8 /* libcrypto.1.0.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		754C47AB15DC239F00316C67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		754C47BC15DC23A000316C67 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		754C47EE15DC2DF100316C67 /* libpmutility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpmutility.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		758962CB1F253B28005C9ED8 /* libcrypto.1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.1.0.0.dylib; path = ../../../../usr/local/Cellar/openssl/1.0.2h_1/lib/libcrypto.1.0.0.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,11 +135,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758962CC1F253B28005C9ED8 /* libcrypto.1.0.0.dylib in Frameworks */,
 				7535D1F514DF273400613F39 /* Carbon.framework in Frameworks */,
 				7535D1F614DF273400613F39 /* CoreFoundation.framework in Frameworks */,
 				7535D1F114DF273300613F39 /* Foundation.framework in Frameworks */,
 				7535D1D314DF240C00613F39 /* Cocoa.framework in Frameworks */,
-				7548266315E8387D00A1AAAB /* libcrypto.0.9.8.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758962CD1F253B28005C9ED8 /* libcrypto.1.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +157,7 @@
 		7535D1C314DF240C00613F39 = {
 			isa = PBXGroup;
 			children = (
+				758962CB1F253B28005C9ED8 /* libcrypto.1.0.0.dylib */,
 				7548266215E8387D00A1AAAB /* libcrypto.0.9.8.dylib */,
 				7535D1E714DF24AA00613F39 /* pmUtility.h */,
 				7535D1D814DF240C00613F39 /* PMUtility */,
@@ -465,6 +469,10 @@
 				GCC_PREFIX_HEADER = "PMUtility/PMUtility-Prefix.pch";
 				INFOPLIST_FILE = "PMUtility/PMUtility-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/openssl/1.0.2h_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -476,6 +484,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/openssl/1.0.2h_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -548,6 +560,10 @@
 				GCC_PREFIX_HEADER = "PMUtility/PMUtility-Prefix.pch";
 				INFOPLIST_FILE = "PMUtility/PMUtility-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/openssl/1.0.2h_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -564,6 +580,10 @@
 				GCC_PREFIX_HEADER = "PMUtility/PMUtility-Prefix.pch";
 				INFOPLIST_FILE = "PMUtility/PMUtility-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/openssl/1.0.2h_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -575,6 +595,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/openssl/1.0.2h_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -586,6 +610,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/openssl/1.0.2h_1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

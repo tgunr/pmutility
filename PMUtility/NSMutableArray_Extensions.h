@@ -12,7 +12,7 @@
 
 -(void)insertObjectsFromArray:(NSArray *)array atIndex:(NSInteger)index;
 
--(id)reverseObjects;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) id reverseObjects;
 
 -(id)insertUniqueObjectsFromArray:(NSArray*)newArray atIndex:(NSInteger)index;
 -(id)addUniqueObjectsFromArray:(NSArray*)newArray;

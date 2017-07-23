@@ -19,8 +19,8 @@
 -(NSString*)hexString		
 {
 	NSString*		outString = nil;
-	const char*		myBytes = [self bytes];
-	NSUInteger		myLength = [self length];
+	const char*		myBytes = self.bytes;
+	NSUInteger		myLength = self.length;
 	unsigned int	myIndex;
 	char*			hexChars = NULL;
 	
@@ -30,7 +30,7 @@
 	for (myIndex = 0; myIndex < myLength; myIndex++ )
 		sprintf(hexChars + myIndex * 2, "%02x", myBytes[myIndex]);
 
-	outString = [NSString stringWithUTF8String:hexChars];
+	outString = @(hexChars);
 
 	free( hexChars );
 	return outString;

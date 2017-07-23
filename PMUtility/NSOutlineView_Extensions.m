@@ -10,12 +10,12 @@
 @implementation NSOutlineView (PMExtension)
 
 // returns the first selected item
-- (id)selectedItem { return [self itemAtRow: [self selectedRow]]; }
+- (id)selectedItem { return [self itemAtRow: self.selectedRow]; }
  
 // gives all selected items
 - (NSArray*)allSelectedItems {
     NSMutableArray *items = [NSMutableArray array];
-    NSIndexSet *selectedRows = [self selectedRowIndexes];
+    NSIndexSet *selectedRows = self.selectedRowIndexes;
 	[selectedRows enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
         if ([self itemAtRow:idx]) 
 			[items addObject: [self itemAtRow:idx]];
@@ -29,8 +29,8 @@
     if (extend==NO) 
 		[self deselectAll:nil];
 	NSMutableIndexSet * indexes = [NSIndexSet indexSet];
-    for (i=0;i<[items count];i++) {
-        NSUInteger row = [self rowForItem:[items objectAtIndex:i]];
+    for (i=0;i<items.count;i++) {
+        NSUInteger row = [self rowForItem:items[i]];
         if(row) {
 			[indexes addIndex:row];
 		}
@@ -51,7 +51,7 @@
  
 - (unsigned long) nextRow:(int)curRow wrapOK:(BOOL)wrapFlag
 {
-    unsigned long numRows = [self numberOfRows];
+    unsigned long numRows = self.numberOfRows;
     unsigned long nextRow;
     
     // check if current row is out of range
@@ -84,22 +84,22 @@
     NSUInteger nextSelRow;
     NSIndexSet *selRowIndexes = nil;
     
-    selRowIndexes = [self selectedRowIndexes];
+    selRowIndexes = self.selectedRowIndexes;
     if (nil == selRowIndexes) 
 		return (int)NSNotFound;
  
     // if current selected row is bogus, return
     // the first selected row in the list
-    if ((curSelectedRow < 0) || (curSelectedRow > [selRowIndexes lastIndex]))
+    if ((curSelectedRow < 0) || (curSelectedRow > selRowIndexes.lastIndex))
     {
-        return ([selRowIndexes firstIndex]);
+        return (selRowIndexes.firstIndex);
     }
  
     nextSelRow = [selRowIndexes indexGreaterThanIndex: curSelectedRow];
     if (nextSelRow == NSNotFound)
     {
         if (YES == wrapFlag)
-            return ([selRowIndexes firstIndex]);
+            return (selRowIndexes.firstIndex);
         else
             return (int)NSNotFound;
     }
@@ -110,22 +110,22 @@
 // get the last selected row
 - (unsigned long) lastSelectedRow
 {
-    NSIndexSet *selRowIndexes = [self selectedRowIndexes];
+    NSIndexSet *selRowIndexes = self.selectedRowIndexes;
  
     if (nil == selRowIndexes) 
 		return (int)NSNotFound;
  
-    return([selRowIndexes lastIndex]);
+    return(selRowIndexes.lastIndex);
 }
  
 // get the first selected row
 - (unsigned long) firstSelectedRow
 {
-    NSIndexSet *selRowIndexes = [self selectedRowIndexes];
+    NSIndexSet *selRowIndexes = self.selectedRowIndexes;
     if (nil == selRowIndexes) 
 		return (int)NSNotFound;
  
-    return([selRowIndexes firstIndex]);
+    return(selRowIndexes.firstIndex);
 }
  
  
