@@ -21,8 +21,8 @@
 
 -(id)reverseObjects
 {
-	NSInteger	arrayIndex, arrayCount = [self count] / 2;
-	NSInteger	arrayOut = [self count] -1;
+	NSInteger	arrayIndex, arrayCount = self.count / 2;
+	NSInteger	arrayOut = self.count -1;
 	
 	for( arrayIndex=0; arrayIndex < arrayCount; arrayIndex++ )
 		[self exchangeObjectAtIndex:arrayIndex withObjectAtIndex:arrayOut-arrayIndex];
@@ -43,7 +43,7 @@
 }
 
 -(id)addUniqueObjectsFromArray:(NSArray*)newArray {
-    return [self insertUniqueObjectsFromArray:newArray atIndex:[self count]];
+    return [self insertUniqueObjectsFromArray:newArray atIndex:self.count];
 }
 
 @end		//	NSMutableArray (PMExtension)

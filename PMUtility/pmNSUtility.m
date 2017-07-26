@@ -37,7 +37,7 @@
 
 - (NSString *)singleLineDescription
 {
-    return [[[self description] componentsSeparatedByString:@"\n"] componentsJoinedByString:@" "];
+    return [[self.description componentsSeparatedByString:@"\n"] componentsJoinedByString:@" "];
 }
 
 /*
@@ -82,9 +82,9 @@ Boolean			CFBooleanToBoolean(CFBooleanRef inCFBoolean)
 { return( CFBooleanGetValue(inCFBoolean) ); }
 
 CFBooleanRef	NSNumberToCFBoolean(NSNumber*	inNSNum)
-{ return( BOOLToCFBoolean([inNSNum boolValue]) ); }
+{ return( BOOLToCFBoolean(inNSNum.boolValue) ); }
 
 NSNumber*		CFBooleanToNSNumber(CFBooleanRef inCFBoolean)
-{ return [NSNumber numberWithBool:CFBooleanToBOOL(inCFBoolean)]; }
+{ return @(CFBooleanToBOOL(inCFBoolean)); }
 
 

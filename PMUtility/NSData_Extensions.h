@@ -10,11 +10,11 @@
 
 @interface NSData(StandardDigest)
 
--(NSString*)hexString;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *hexString;
 
--(NSData*)md5Data;
--(NSString*)md5String;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSData *md5Data;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *md5String;
 
--(NSData*)sha1Data;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSData *sha1Data;
 
 @end

@@ -657,56 +657,56 @@ Boolean CFAbsoluteTimeBetweenTimes(CFAbsoluteTime lowTime, CFAbsoluteTime unknow
 
 //	Internal headers
 
-CFDataRef CFDataCreateEVPDigest(CFAllocatorRef inAllocator, CFDataRef inData, const EVP_MD *inDigestType);
+//CFDataRef CFDataCreateEVPDigest(CFAllocatorRef inAllocator, CFDataRef inData, const EVP_MD *inDigestType);
+//
+//CFDataRef CFStringCreateEVPDigest(CFAllocatorRef inAllocator, CFStringRef inString, const EVP_MD *inDigestType);
+//
+//
+//CFDataRef CFDataCreateEVPDigest(CFAllocatorRef inAllocator, CFDataRef inData, const EVP_MD *inDigestType) {
+//	//	Compute an EVP digest
+//	//	See <openssl/evp.h> for details 
+//
+//	EVP_MD_CTX    mdctx;
+//	unsigned char md_value[EVP_MAX_MD_SIZE];
+//	unsigned int  md_len;
+//
+//	if (inData == NULL)
+//		return (CFDataRef)NULL;
+//
+//	EVP_DigestInit(&mdctx, inDigestType);
+//	EVP_DigestUpdate(&mdctx, CFDataGetBytePtr(inData), CFDataGetLength(inData));
+//	EVP_DigestFinal(&mdctx, md_value, &md_len);
+//	return CFDataCreate(inAllocator, md_value, md_len);
+//}
 
-CFDataRef CFStringCreateEVPDigest(CFAllocatorRef inAllocator, CFStringRef inString, const EVP_MD *inDigestType);
+//CFDataRef CFDataCreateMD5Digest(CFAllocatorRef inAllocator, CFDataRef inData) {
+//	return CFDataCreateEVPDigest(inAllocator, inData, EVP_md5());
+//}
+//
+//CFDataRef CFDataCreateSHA1Digest(CFAllocatorRef inAllocator, CFDataRef inData) {
+//	return CFDataCreateEVPDigest(inAllocator, inData, EVP_sha1());
+//}
 
+//CFDataRef CFStringCreateEVPDigest(CFAllocatorRef inAllocator, CFStringRef inString, const EVP_MD *inDigestType) {
+//	CFDataRef theStringData = CFStringCreateExternalRepresentation(inAllocator, inString, kCFStringEncodingUTF8, 0);
+//	CFDataRef theDigest     = NULL;
+//
+//	if (theStringData == NULL)
+//		return theDigest;
+//
+//	theDigest = CFDataCreateEVPDigest(inAllocator, theStringData, inDigestType);
+//
+//	CFRelease(theStringData);
+//	return theDigest;
+//}
 
-CFDataRef CFDataCreateEVPDigest(CFAllocatorRef inAllocator, CFDataRef inData, const EVP_MD *inDigestType) {
-	//	Compute an EVP digest
-	//	See <openssl/evp.h> for details 
-
-	EVP_MD_CTX    mdctx;
-	unsigned char md_value[EVP_MAX_MD_SIZE];
-	unsigned int  md_len;
-
-	if (inData == NULL)
-		return (CFDataRef)NULL;
-
-	EVP_DigestInit(&mdctx, inDigestType);
-	EVP_DigestUpdate(&mdctx, CFDataGetBytePtr(inData), CFDataGetLength(inData));
-	EVP_DigestFinal(&mdctx, md_value, &md_len);
-	return CFDataCreate(inAllocator, md_value, md_len);
-}
-
-CFDataRef CFDataCreateMD5Digest(CFAllocatorRef inAllocator, CFDataRef inData) {
-	return CFDataCreateEVPDigest(inAllocator, inData, EVP_md5());
-}
-
-CFDataRef CFDataCreateSHA1Digest(CFAllocatorRef inAllocator, CFDataRef inData) {
-	return CFDataCreateEVPDigest(inAllocator, inData, EVP_sha1());
-}
-
-CFDataRef CFStringCreateEVPDigest(CFAllocatorRef inAllocator, CFStringRef inString, const EVP_MD *inDigestType) {
-	CFDataRef theStringData = CFStringCreateExternalRepresentation(inAllocator, inString, kCFStringEncodingUTF8, 0);
-	CFDataRef theDigest     = NULL;
-
-	if (theStringData == NULL)
-		return theDigest;
-
-	theDigest = CFDataCreateEVPDigest(inAllocator, theStringData, inDigestType);
-
-	CFRelease(theStringData);
-	return theDigest;
-}
-
-CFDataRef CFStringCreateMD5Digest(CFAllocatorRef inAllocator, CFStringRef inString) {
-	return CFStringCreateEVPDigest(inAllocator, inString, EVP_md5());
-}
-
-CFDataRef CFStringCreateSHA1Digest(CFAllocatorRef inAllocator, CFStringRef inString) {
-	return CFStringCreateEVPDigest(inAllocator, inString, EVP_sha1());
-}
+//CFDataRef CFStringCreateMD5Digest(CFAllocatorRef inAllocator, CFStringRef inString) {
+//	return CFStringCreateEVPDigest(inAllocator, inString, EVP_md5());
+//}
+//
+//CFDataRef CFStringCreateSHA1Digest(CFAllocatorRef inAllocator, CFStringRef inString) {
+//	return CFStringCreateEVPDigest(inAllocator, inString, EVP_sha1());
+//}
 
 
 CFStringRef CFDataCreateHexString(CFAllocatorRef inAllocator, CFDataRef inData) {
@@ -953,7 +953,7 @@ OSStatus SetAsyncOpInMotion(Boolean copy, FSFileOperationRef fileOp, const FSRef
 //        require(fileOp, FSFileOperationCreate);
 //
 //        err = FSFileOperationScheduleWithRunLoop(fileOp, runLoop, kCFRunLoopDefaultMode);
-//        require_noerr(err, FSFileOperationScheduleWithRunLoop);
+//        AF_Require_noErr(err, FSFileOperationScheduleWithRunLoop);
 //
 //
 //        err = SetAsyncPathOpInMotion(copy, fileOp, sourcePath, destPath, destString, options, statusCallbackPath, statusInterval, contextString);
@@ -965,7 +965,7 @@ OSStatus SetAsyncOpInMotion(Boolean copy, FSFileOperationRef fileOp, const FSRef
 //
 //        if (destString)
 //            CFRelease(destString);
-//        require_noerr(err, FSXXXXObjectAsyncFailed);
+//        AF_Require_noErr(err, FSXXXXObjectAsyncFailed);
 //
 //
 //        // This is a wait loop, since the tool does not have anything better to do.
@@ -1002,7 +1002,7 @@ OSStatus SetAsyncOpInMotion(Boolean copy, FSFileOperationRef fileOp, const FSRef
 //    FSFileOperationCreateFailed:
 //            return err;
 //}
-//
+
 //OSStatus OperateByRef(Boolean copy, const char *sourcePath, const char *destPath, const char *destName, CFTimeInterval statusInterval, OptionBits options, Boolean async, CFStringRef contextString) {
 //
 //    FSRef              srcRef, destDirRef, target;
@@ -1013,9 +1013,9 @@ OSStatus SetAsyncOpInMotion(Boolean copy, FSFileOperationRef fileOp, const FSRef
 //
 //    pmCFUtilityDone = false;
 //    err   = FSPathMakeRef((UInt8 *)sourcePath, &srcRef, NULL);
-//    require_noerr(err, FSPathMakeRefsourceFailed);
+//    AF_Require_noErr(err, FSPathMakeRefsourceFailed);
 //    err = FSPathMakeRef((UInt8 *)destPath, &destDirRef, NULL);
-//    require_noerr(err, FSPathMakeRefdestFailed);
+//    AF_Require_noErr(err, FSPathMakeRefdestFailed);
 //
 //    if (destName) {
 //        destString = CFStringCreateWithCString(kCFAllocatorDefault, destName, kCFStringEncodingUTF8);
@@ -1027,10 +1027,10 @@ OSStatus SetAsyncOpInMotion(Boolean copy, FSFileOperationRef fileOp, const FSRef
 //        runLoop = CFRunLoopGetCurrent();
 //        fileOp  = FSFileOperationCreate(kCFAllocatorDefault);
 //
-//        require(fileOp, FSFileOperationCreateFailed);
+//        require(fileOp, FSFileOperationCreate);
 //
 //        err = FSFileOperationScheduleWithRunLoop(fileOp, runLoop, kCFRunLoopDefaultMode);
-//        require_noerr(err, FSFileOperationScheduleWithRunLoopFailed);
+//        AF_Require_noErr(err, FSFileOperationScheduleWithRunLoopFailed);
 //
 //        err = SetAsyncOpInMotion(copy, fileOp, &srcRef, &destDirRef, destString, options, statusCallback, statusInterval, contextString);
 //
@@ -1042,7 +1042,7 @@ OSStatus SetAsyncOpInMotion(Boolean copy, FSFileOperationRef fileOp, const FSRef
 //        if (destString)
 //            CFRelease(destString);
 //
-//        require_noerr(err, FSXXXXObjectAsyncFailed);
+//        AF_Require_noErr(err, FSXXXXObjectAsyncFailed);
 //
 //        // This is a wait loop, since the tool does not have anything better to do.
 //        // In a real application there should be plenty of better things to do.
@@ -1053,9 +1053,9 @@ OSStatus SetAsyncOpInMotion(Boolean copy, FSFileOperationRef fileOp, const FSRef
 //
 //        (void)FSFileOperationCopyStatus(fileOp, &target, NULL, &err, NULL, NULL);
 //
-//        FSXXXXObjectAsyncFailed:
-//                FSFileOperationScheduleWithRunLoopFailed:
-//                        CFRelease(fileOp);
+//FSXXXXObjectAsyncFailed:
+//FSFileOperationScheduleWithRunLoopFailed:
+//        CFRelease(fileOp);
 //    }
 //    else {
 //        // contextString does not apply to the sync call, so release it now
@@ -1076,10 +1076,10 @@ OSStatus SetAsyncOpInMotion(Boolean copy, FSFileOperationRef fileOp, const FSRef
 ////        PrintFSRef(&target);
 //    }
 //
-//    FSFileOperationCreateFailed:
-//            FSPathMakeRefsourceFailed:
-//                    FSPathMakeRefdestFailed:
-//                            return err;
+//FSFileOperationCreateFailed:
+//FSPathMakeRefsourceFailed:
+//FSPathMakeRefdestFailed:
+//    return err;
 //}
 
 //void OperateUsage(const char *progname)

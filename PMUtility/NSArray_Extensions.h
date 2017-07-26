@@ -11,9 +11,9 @@
 
 -(NSArray*)arrayOfPathsThatConformToUTIs:(NSArray*)theUTIs resultsAsURL:(BOOL)saveURLs;
 
--(id)randomObject;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) id randomObject;
 
--(NSString*)md5String;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *md5String;
 
 @end	//	NSArray(PMExtensions)
 

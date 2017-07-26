@@ -19,8 +19,8 @@ extern const	time_t	kTimeOneDayInSeconds;
 -(float)rankWithDate:(id)other withOptions:(NSMutableDictionary*)options;
 
 -(NSString*)formatDateString:(NSString*)dateFormat useNatural:(BOOL)doNatural;
--(NSString*)naturalDateString;
--(NSString*)shorterDateString;
--(NSString*)longerDateString;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *naturalDateString;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *shorterDateString;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *longerDateString;
 
 @end

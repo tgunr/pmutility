@@ -13,7 +13,7 @@
 
 +(NSNumber*)zero;
 
--(NSString*)md5String;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *md5String;
 -(NSNumber*)addToNumber:(NSNumber*)otherNum;
 
 @end	//	NSNumber(StandardDigest)
