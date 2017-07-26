@@ -930,157 +930,157 @@ OSStatus SetAsyncOpInMotion(Boolean copy, FSFileOperationRef fileOp, const FSRef
 	return err;
 }
 
-OSStatus OperateByPath(Boolean copy, const char *sourcePath, const char *destPath, const char *destName, CFTimeInterval statusInterval, OptionBits options, Boolean async, CFStringRef contextString) {
-
-	OSStatus           err;
-	CFRunLoopRef       runLoop;
-	FSFileOperationRef fileOp;
-	CFStringRef        destString = NULL;
-	char *targetPath;
-
-	pmCFUtilityDone = false;
-
-	if (destName) {
-		destString = CFStringCreateWithCString(kCFAllocatorDefault, destName, kCFStringEncodingUTF8);
-		if ((destString == NULL) && (pmCFUtilityVerbose))
-			fprintf(stderr, "Could not create destString for %s, using NULL\n", destName);
-	}
-
-	if (async) {
-		runLoop = CFRunLoopGetCurrent();
-		fileOp  = FSFileOperationCreate(kCFAllocatorDefault);
-
-		require(fileOp, FSFileOperationCreateFailed);
-
-		err = FSFileOperationScheduleWithRunLoop(fileOp, runLoop, kCFRunLoopDefaultMode);
-		require_noerr(err, FSFileOperationScheduleWithRunLoopFailed);
-
-
-		err = SetAsyncPathOpInMotion(copy, fileOp, sourcePath, destPath, destString, options, statusCallbackPath, statusInterval, contextString);
-
-		// The operation will retain the data it requires, so go ahead andrelease
-		// the contextString and destString now if they were provided
-		if (contextString)
-			CFRelease(contextString);
-
-		if (destString)
-			CFRelease(destString);
-		require_noerr(err, FSXXXXObjectAsyncFailed);
-
-
-		// This is a wait loop, since the tool does not have anything better to do.
-		// In a real application there should be plenty of better things to do.
-		// Make sure to run the runloop that the operation is scheduled on in the
-		// specified mode.
-		while (!pmCFUtilityDone)
-			CFRunLoopRunInMode(kCFRunLoopDefaultMode, 5.0, true);
-
-		(void)FSPathFileOperationCopyStatus(fileOp, &targetPath, NULL, &err, NULL, NULL);
-
-		FSXXXXObjectAsyncFailed:
-				FSFileOperationScheduleWithRunLoopFailed:
-						CFRelease(fileOp);
-	}
-	else {
-		// contextString does not apply to the sync call, so release it now
-		if (contextString)
-			CFRelease(contextString);
-
-		if (copy)
-			err = FSPathCopyObjectSync(sourcePath, destPath, destString, &targetPath, options);
-		else
-			err = FSPathMoveObjectSync(sourcePath, destPath, destString, &targetPath, options);
-
-		if (destString)
-			CFRelease(destString);
-	}
-
-	if ((err == noErr) && (pmCFUtilityVerbose) && (targetPath)) {
-		printf("targetPath: %s\n", targetPath);
-		free(targetPath);
-	}
-	FSFileOperationCreateFailed:
-			return err;
-}
-
-OSStatus OperateByRef(Boolean copy, const char *sourcePath, const char *destPath, const char *destName, CFTimeInterval statusInterval, OptionBits options, Boolean async, CFStringRef contextString) {
-
-	FSRef              srcRef, destDirRef, target;
-	OSStatus           err;
-	CFRunLoopRef       runLoop;
-	FSFileOperationRef fileOp;
-	CFStringRef        destString = NULL;
-
-	pmCFUtilityDone = false;
-	err   = FSPathMakeRef((UInt8 *)sourcePath, &srcRef, NULL);
-	require_noerr(err, FSPathMakeRefsourceFailed);
-	err = FSPathMakeRef((UInt8 *)destPath, &destDirRef, NULL);
-	require_noerr(err, FSPathMakeRefdestFailed);
-
-	if (destName) {
-		destString = CFStringCreateWithCString(kCFAllocatorDefault, destName, kCFStringEncodingUTF8);
-		if ((destString == NULL) && (pmCFUtilityVerbose))
-			fprintf(stderr, "Could not create destString for %s, using NULL\n", destName);
-	}
-
-	if (async) {
-		runLoop = CFRunLoopGetCurrent();
-		fileOp  = FSFileOperationCreate(kCFAllocatorDefault);
-
-		require(fileOp, FSFileOperationCreateFailed);
-
-		err = FSFileOperationScheduleWithRunLoop(fileOp, runLoop, kCFRunLoopDefaultMode);
-		require_noerr(err, FSFileOperationScheduleWithRunLoopFailed);
-
-		err = SetAsyncOpInMotion(copy, fileOp, &srcRef, &destDirRef, destString, options, statusCallback, statusInterval, contextString);
-
-		// The operation will retain the data it requires, so go ahead andrelease
-		// the contextString and destString now if they were provided
-		if (contextString)
-			CFRelease(contextString);
-
-		if (destString)
-			CFRelease(destString);
-
-		require_noerr(err, FSXXXXObjectAsyncFailed);
-
-		// This is a wait loop, since the tool does not have anything better to do.
-		// In a real application there should be plenty of better things to do.
-		// Make sure to run the runloop that the operation is scheduled on in the
-		// specified mode.
-		while (!pmCFUtilityDone)
-			CFRunLoopRunInMode(kCFRunLoopDefaultMode, 5.0, true);
-
-		(void)FSFileOperationCopyStatus(fileOp, &target, NULL, &err, NULL, NULL);
-
-		FSXXXXObjectAsyncFailed:
-				FSFileOperationScheduleWithRunLoopFailed:
-						CFRelease(fileOp);
-	}
-	else {
-		// contextString does not apply to the sync call, so release it now
-		if (contextString)
-			CFRelease(contextString);
-
-		if (copy)
-			err = FSCopyObjectSync(&srcRef, &destDirRef, destString, &target, options);
-		else
-			err = FSMoveObjectSync(&srcRef, &destDirRef, destString, &target, options);
-
-		if (destString)
-			CFRelease(destString);
-	}
-
-	if ((err == noErr) && (pmCFUtilityVerbose)) {
-		printf("target: ");
-//		PrintFSRef(&target);
-	}
-
-	FSFileOperationCreateFailed:
-			FSPathMakeRefsourceFailed:
-					FSPathMakeRefdestFailed:
-							return err;
-}
+//OSStatus OperateByPath(Boolean copy, const char *sourcePath, const char *destPath, const char *destName, CFTimeInterval statusInterval, OptionBits options, Boolean async, CFStringRef contextString) {
+//
+//    OSStatus           err;
+//    CFRunLoopRef       runLoop;
+//    FSFileOperationRef fileOp;
+//    CFStringRef        destString = NULL;
+//    char *targetPath;
+//
+//    pmCFUtilityDone = false;
+//
+//    if (destName) {
+//        destString = CFStringCreateWithCString(kCFAllocatorDefault, destName, kCFStringEncodingUTF8);
+//        if ((destString == NULL) && (pmCFUtilityVerbose))
+//            fprintf(stderr, "Could not create destString for %s, using NULL\n", destName);
+//    }
+//
+//    if (async) {
+//        runLoop = CFRunLoopGetCurrent();
+//        fileOp  = FSFileOperationCreate(kCFAllocatorDefault);
+//
+//        require(fileOp, FSFileOperationCreate);
+//
+//        err = FSFileOperationScheduleWithRunLoop(fileOp, runLoop, kCFRunLoopDefaultMode);
+//        require_noerr(err, FSFileOperationScheduleWithRunLoop);
+//
+//
+//        err = SetAsyncPathOpInMotion(copy, fileOp, sourcePath, destPath, destString, options, statusCallbackPath, statusInterval, contextString);
+//
+//        // The operation will retain the data it requires, so go ahead andrelease
+//        // the contextString and destString now if they were provided
+//        if (contextString)
+//            CFRelease(contextString);
+//
+//        if (destString)
+//            CFRelease(destString);
+//        require_noerr(err, FSXXXXObjectAsyncFailed);
+//
+//
+//        // This is a wait loop, since the tool does not have anything better to do.
+//        // In a real application there should be plenty of better things to do.
+//        // Make sure to run the runloop that the operation is scheduled on in the
+//        // specified mode.
+//        while (!pmCFUtilityDone)
+//            CFRunLoopRunInMode(kCFRunLoopDefaultMode, 5.0, true);
+//
+//        (void)FSPathFileOperationCopyStatus(fileOp, &targetPath, NULL, &err, NULL, NULL);
+//
+//        FSXXXXObjectAsyncFailed:
+//                FSFileOperationScheduleWithRunLoopFailed:
+//                        CFRelease(fileOp);
+//    }
+//    else {
+//        // contextString does not apply to the sync call, so release it now
+//        if (contextString)
+//            CFRelease(contextString);
+//
+//        if (copy)
+//            err = FSPathCopyObjectSync(sourcePath, destPath, destString, &targetPath, options);
+//        else
+//            err = FSPathMoveObjectSync(sourcePath, destPath, destString, &targetPath, options);
+//
+//        if (destString)
+//            CFRelease(destString);
+//    }
+//
+//    if ((err == noErr) && (pmCFUtilityVerbose) && (targetPath)) {
+//        printf("targetPath: %s\n", targetPath);
+//        free(targetPath);
+//    }
+//    FSFileOperationCreateFailed:
+//            return err;
+//}
+//
+//OSStatus OperateByRef(Boolean copy, const char *sourcePath, const char *destPath, const char *destName, CFTimeInterval statusInterval, OptionBits options, Boolean async, CFStringRef contextString) {
+//
+//    FSRef              srcRef, destDirRef, target;
+//    OSStatus           err;
+//    CFRunLoopRef       runLoop;
+//    FSFileOperationRef fileOp;
+//    CFStringRef        destString = NULL;
+//
+//    pmCFUtilityDone = false;
+//    err   = FSPathMakeRef((UInt8 *)sourcePath, &srcRef, NULL);
+//    require_noerr(err, FSPathMakeRefsourceFailed);
+//    err = FSPathMakeRef((UInt8 *)destPath, &destDirRef, NULL);
+//    require_noerr(err, FSPathMakeRefdestFailed);
+//
+//    if (destName) {
+//        destString = CFStringCreateWithCString(kCFAllocatorDefault, destName, kCFStringEncodingUTF8);
+//        if ((destString == NULL) && (pmCFUtilityVerbose))
+//            fprintf(stderr, "Could not create destString for %s, using NULL\n", destName);
+//    }
+//
+//    if (async) {
+//        runLoop = CFRunLoopGetCurrent();
+//        fileOp  = FSFileOperationCreate(kCFAllocatorDefault);
+//
+//        require(fileOp, FSFileOperationCreateFailed);
+//
+//        err = FSFileOperationScheduleWithRunLoop(fileOp, runLoop, kCFRunLoopDefaultMode);
+//        require_noerr(err, FSFileOperationScheduleWithRunLoopFailed);
+//
+//        err = SetAsyncOpInMotion(copy, fileOp, &srcRef, &destDirRef, destString, options, statusCallback, statusInterval, contextString);
+//
+//        // The operation will retain the data it requires, so go ahead andrelease
+//        // the contextString and destString now if they were provided
+//        if (contextString)
+//            CFRelease(contextString);
+//
+//        if (destString)
+//            CFRelease(destString);
+//
+//        require_noerr(err, FSXXXXObjectAsyncFailed);
+//
+//        // This is a wait loop, since the tool does not have anything better to do.
+//        // In a real application there should be plenty of better things to do.
+//        // Make sure to run the runloop that the operation is scheduled on in the
+//        // specified mode.
+//        while (!pmCFUtilityDone)
+//            CFRunLoopRunInMode(kCFRunLoopDefaultMode, 5.0, true);
+//
+//        (void)FSFileOperationCopyStatus(fileOp, &target, NULL, &err, NULL, NULL);
+//
+//        FSXXXXObjectAsyncFailed:
+//                FSFileOperationScheduleWithRunLoopFailed:
+//                        CFRelease(fileOp);
+//    }
+//    else {
+//        // contextString does not apply to the sync call, so release it now
+//        if (contextString)
+//            CFRelease(contextString);
+//
+//        if (copy)
+//            err = FSCopyObjectSync(&srcRef, &destDirRef, destString, &target, options);
+//        else
+//            err = FSMoveObjectSync(&srcRef, &destDirRef, destString, &target, options);
+//
+//        if (destString)
+//            CFRelease(destString);
+//    }
+//
+//    if ((err == noErr) && (pmCFUtilityVerbose)) {
+//        printf("target: ");
+////        PrintFSRef(&target);
+//    }
+//
+//    FSFileOperationCreateFailed:
+//            FSPathMakeRefsourceFailed:
+//                    FSPathMakeRefdestFailed:
+//                            return err;
+//}
 
 //void OperateUsage(const char *progname)
 //{
