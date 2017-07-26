@@ -22,6 +22,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		75083BFD1F29251C00B9B089 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 75083BFC1F29251C00B9B089 /* libcrypto.dylib */; };
+		75083BFE1F29251C00B9B089 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 75083BFC1F29251C00B9B089 /* libcrypto.dylib */; };
 		7522193615E84F920003E5B9 /* pmNSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22B14DF29E000613F39 /* pmNSUtility.m */; };
 		7535D1D314DF240C00613F39 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D1D214DF240C00613F39 /* Cocoa.framework */; };
 		7535D1DD14DF240C00613F39 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7535D1DB14DF240C00613F39 /* InfoPlist.strings */; };
@@ -57,7 +59,6 @@
 		7535D22F14DF29E000613F39 /* pmCFUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22914DF29E000613F39 /* pmCFUtility.c */; };
 		7535D23014DF29E000613F39 /* pmNSUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 7535D22A14DF29E000613F39 /* pmNSUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7535D23114DF29E000613F39 /* pmNSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22B14DF29E000613F39 /* pmNSUtility.m */; };
-		7548266315E8387D00A1AAAB /* libcrypto.0.9.8.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7548266215E8387D00A1AAAB /* libcrypto.0.9.8.dylib */; };
 		754C47E815DC2DF100316C67 /* pm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22714DF29E000613F39 /* pm.m */; };
 		754C47F515DC2FA500316C67 /* pmCFUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22914DF29E000613F39 /* pmCFUtility.c */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75083BFC1F29251C00B9B089 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = ../../../usr/lib/libcrypto.dylib; sourceTree = "<group>"; };
 		7535D1CF14DF240C00613F39 /* PMUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PMUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7535D1D214DF240C00613F39 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7535D1D514DF240C00613F39 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -120,7 +122,6 @@
 		7535D22914DF29E000613F39 /* pmCFUtility.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pmCFUtility.c; sourceTree = "<group>"; };
 		7535D22A14DF29E000613F39 /* pmNSUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pmNSUtility.h; sourceTree = "<group>"; };
 		7535D22B14DF29E000613F39 /* pmNSUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pmNSUtility.m; sourceTree = "<group>"; };
-		7548266215E8387D00A1AAAB /* libcrypto.0.9.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.0.9.8.dylib; path = ../../../../../../../usr/lib/libcrypto.0.9.8.dylib; sourceTree = "<group>"; };
 		754C47A915DC239F00316C67 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		754C47AA15DC239F00316C67 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		754C47AB15DC239F00316C67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -137,7 +138,7 @@
 				7535D1F614DF273400613F39 /* CoreFoundation.framework in Frameworks */,
 				7535D1F114DF273300613F39 /* Foundation.framework in Frameworks */,
 				7535D1D314DF240C00613F39 /* Cocoa.framework in Frameworks */,
-				7548266315E8387D00A1AAAB /* libcrypto.0.9.8.dylib in Frameworks */,
+				75083BFD1F29251C00B9B089 /* libcrypto.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75083BFE1F29251C00B9B089 /* libcrypto.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +156,7 @@
 		7535D1C314DF240C00613F39 = {
 			isa = PBXGroup;
 			children = (
-				7548266215E8387D00A1AAAB /* libcrypto.0.9.8.dylib */,
+				75083BFC1F29251C00B9B089 /* libcrypto.dylib */,
 				7535D1E714DF24AA00613F39 /* pmUtility.h */,
 				7535D1D814DF240C00613F39 /* PMUtility */,
 				7535D1D114DF240C00613F39 /* Frameworks */,
@@ -335,7 +337,7 @@
 		7535D1C514DF240C00613F39 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0610;
 			};
 			buildConfigurationList = 7535D1C814DF240C00613F39 /* Build configuration list for PBXProject "PMUtility" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -430,7 +432,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -448,9 +449,13 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_OPENMP_FLAGS = "-fopenmp";
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/openssl/1.0.2k/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lcrypto";
+				SDKROOT = macosx;
 				SYMROOT = ../build;
+				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/Cellar/openssl/1.0.2k/include;
 			};
 			name = Debug;
 		};
@@ -492,7 +497,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -510,9 +514,12 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_OPENMP_FLAGS = "-fopenmp";
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/openssl/1.0.2k/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx10.7;
+				OTHER_LDFLAGS = "-lcrypto";
+				SDKROOT = macosx;
 				SYMROOT = ../build;
+				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/Cellar/openssl/1.0.2k/include;
 			};
 			name = Development;
 		};
@@ -520,7 +527,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -531,9 +537,12 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LD_OPENMP_FLAGS = "-fopenmp";
+				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/openssl/1.0.2k/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx10.7;
+				OTHER_LDFLAGS = "-lcrypto";
+				SDKROOT = macosx;
 				SYMROOT = ../build;
+				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/Cellar/openssl/1.0.2k/include;
 			};
 			name = Release;
 		};
