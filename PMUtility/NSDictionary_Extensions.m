@@ -24,7 +24,7 @@
 	while ( (infoKey = [infoEnum nextObject]) ) {
 		infoItem = [self objectForKey:infoKey];
 		if( CFGetTypeID((CFTypeRef)infoItem) == CFBooleanGetTypeID() )
-			[infoString appendString:[CFBooleanToNSNumber((CFBooleanRef)infoItem) md5String]];
+			[infoString appendString:[CFBooleanToNSNumber((__bridge CFBooleanRef)infoItem) md5String]];
 		else if( CFGetTypeID((CFTypeRef)infoItem) == CFUUIDGetTypeID() )
 			[infoString appendString:[(NSString*)CFUUIDCreateString(kCFAllocatorDefault,( CFUUIDRef)infoItem) md5String]];
 		else if( CFGetTypeID((CFTypeRef)infoItem) == CFURLGetTypeID() )

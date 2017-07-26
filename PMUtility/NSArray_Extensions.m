@@ -103,7 +103,7 @@
 		while ( (workPath = (NSString*)[workEnum nextObject]) ) {
 			workURL = [NSURL fileURLWithPath:workPath];
 			if( workURL != nil )
-				if( CFURLConfromsToUTIs( kCFAllocatorDefault, (CFURLRef)workURL, (CFArrayRef)theUTIs, NULL ) )
+				if( CFURLConfromsToUTIs( kCFAllocatorDefault, (CFURLRef)workURL, (__bridge CFArrayRef)theUTIs, NULL ) )
 					[workArray addObject:( saveURLs == YES ) ? workURL : [NSString stringWithString:workPath]];
 		}
 	
