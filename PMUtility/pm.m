@@ -80,6 +80,10 @@ NSString * pmLogLevelString(int inLevel) {
     return level;
 }
 
+void pmLOGARGS(const char *file, const char *function, int inLevel, NSString *format, va_list args) {
+    pmLOG(file, function, inLevel, format, args);
+}
+
 static NSString* 
 pmLOGSelfFormat(id self) {
 	if(self != nil)

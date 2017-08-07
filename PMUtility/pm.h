@@ -43,6 +43,7 @@ enum PMLOGLevel {
 
 void pmLOGSELF(id myself);
 void pmLOG(const char *file, const char *function, int inLevel, NSString * format, ...);
+void pmLOGARGS(const char *file, const char *function,  int inLevel, NSString * format, va_list args);
 void pmERR(const char *file, const char *function, int err, NSString * format, ...);
 void pmMSG(const char *function,  int inLevel, NSString * format, ...);
 
