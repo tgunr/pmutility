@@ -6,7 +6,7 @@
 //
 
 #import "NSDate_Extensions.h"
-#import "PMCFUtility.h"
+#import "pmCFUtility.h"
 #import "pmNSUtility.h"
 
 const	time_t	kTimeOneDayInSeconds = 86400.0f;

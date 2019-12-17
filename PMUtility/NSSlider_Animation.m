@@ -202,7 +202,7 @@ static NSMutableDictionary *ourAnimationTimersDictionary;  //This is where we ke
     endValue = [[parms valueForKey:endValueKey] intValue];
     startValue = [[parms valueForKey:startValueKey] intValue];
     
-    t = MIN(1 , abs([[parms valueForKey:startDateKey] timeIntervalSinceNow]) / sliderAnimationSeconds);  //Looking for a value from zero to one..
+    t = MIN(1 , fabs([[parms valueForKey:startDateKey] timeIntervalSinceNow]) / sliderAnimationSeconds);  //Looking for a value from zero to one..
 //    t = easeFunction(t);  // comment this out to make it linear.
     
     currentValue = startValue + (t * (endValue - startValue));

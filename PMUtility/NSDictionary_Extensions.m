@@ -9,7 +9,7 @@
 #import "NSDictionary_Extensions.h"
 #import "NSString_Extensions.h"
 #import "NSNumber_Extensions.h"
-#import "PMCFUtility.h"
+#import "pmCFUtility.h"
 #import "pmNSUtility.h"
 
 @implementation NSDictionary(PMSExtensions)

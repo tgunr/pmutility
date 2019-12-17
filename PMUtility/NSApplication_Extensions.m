@@ -6,7 +6,7 @@
 //
 
 #import <PMUtility/NSApplication_Extensions.h>
-#import "PMCFUtility.h"
+#import "pmCFUtility.h"
 
 @implementation NSApplication(PMExtensions)
 

@@ -28,7 +28,7 @@
     unsigned int i;
     if (extend==NO) 
 		[self deselectAll:nil];
-	NSMutableIndexSet * indexes = [NSIndexSet indexSet];
+    NSMutableIndexSet * indexes = [[NSMutableIndexSet alloc] initWithIndex: [items count]];
     for (i=0;i<items.count;i++) {
         NSUInteger row = [self rowForItem:items[i]];
         if(row) {
