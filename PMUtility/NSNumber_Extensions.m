@@ -13,9 +13,9 @@
 +(NSNumber*)zero
 {	return @0;	}
 
--(NSString*)md5String
-{	return [self.stringValue md5String];	}
-
+//-(NSString*)md5String
+//{	return [self.stringValue md5String];	}
+//
 -(NSNumber*)addToNumber:(NSNumber*)otherNum
 {	return @(self.doubleValue + otherNum.doubleValue);	}
 

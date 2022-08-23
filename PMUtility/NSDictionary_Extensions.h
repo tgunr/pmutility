@@ -11,7 +11,7 @@
 
 @interface NSDictionary(PMSExtensions)
 
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *md5String;
+//@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *md5String;
 
 @end	//	NSDictionary(StandardDigest)
 

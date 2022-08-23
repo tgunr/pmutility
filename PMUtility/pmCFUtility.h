@@ -70,13 +70,13 @@ Boolean     CFURLConfromsToUTIs(CFAllocatorRef inAllocator, CFURLRef testURL, CF
 Boolean CFAbsoluteTimeBetweenTimes(CFAbsoluteTime lowTime, CFAbsoluteTime unknownTime, CFAbsoluteTime hiTime);
 
 
-CFDataRef CFDataCreateMD5Digest(CFAllocatorRef inAllocator, CFDataRef inData) CF_RETURNS_RETAINED;
-
-CFDataRef CFDataCreateSHA1Digest(CFAllocatorRef inAllocator, CFDataRef inData) CF_RETURNS_RETAINED;
-
-CFDataRef CFStringCreateMD5Digest(CFAllocatorRef inAllocator, CFStringRef inString) CF_RETURNS_RETAINED;
-
-CFDataRef CFStringCreateSHA1Digest(CFAllocatorRef inAllocator, CFStringRef inString) CF_RETURNS_RETAINED;
+//CFDataRef CFDataCreateMD5Digest(CFAllocatorRef inAllocator, CFDataRef inData) CF_RETURNS_RETAINED;
+//
+//CFDataRef CFDataCreateSHA1Digest(CFAllocatorRef inAllocator, CFDataRef inData) CF_RETURNS_RETAINED;
+//
+//CFDataRef CFStringCreateMD5Digest(CFAllocatorRef inAllocator, CFStringRef inString) CF_RETURNS_RETAINED;
+//
+//CFDataRef CFStringCreateSHA1Digest(CFAllocatorRef inAllocator, CFStringRef inString) CF_RETURNS_RETAINED;
 
 CFStringRef CFDataCreateHexString(CFAllocatorRef inAllocator, CFDataRef inData) CF_RETURNS_RETAINED;
 

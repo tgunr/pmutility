@@ -7,8 +7,8 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString(PMExtensions)
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSData *md5Data;
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *md5String;
+//@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSData *md5Data;
+//@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *md5String;
 +(NSString*)stringFromByteCount:(NSNumber*)inBytes;
 -(float)rankWithString:(NSString*)other compareOptions:(NSStringCompareOptions)findOptions;
 - (NSString*)stringByTruncatingBeginningToLength:(NSUInteger)length;
@@ -18,5 +18,5 @@
 @end
 
 @interface NSMutableString(PMExtensions)
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *md5String;
+//@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *md5String;
 @end

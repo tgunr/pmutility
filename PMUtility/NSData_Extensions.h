@@ -12,9 +12,9 @@
 
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *hexString;
 
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSData *md5Data;
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *md5String;
-
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSData *sha1Data;
+//@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSData *md5Data;
+//@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *md5String;
+//
+//@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSData *sha1Data;
 
 @end

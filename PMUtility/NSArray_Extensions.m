@@ -130,17 +130,17 @@
 	return outObject;
 }
 
--(NSString*)md5String
-{
-	NSEnumerator*		infoEnum = [self objectEnumerator];
-	id					infoItem = nil;
-	NSMutableString*	infoString = [NSMutableString stringWithString:@""];
-	
-	while ( (infoItem = [infoEnum nextObject]) ) 
-		[infoString appendString:[infoItem md5String]];
-	
-	return [infoString md5String];
-}
+//-(NSString*)md5String
+//{
+//	NSEnumerator*		infoEnum = [self objectEnumerator];
+//	id					infoItem = nil;
+//	NSMutableString*	infoString = [NSMutableString stringWithString:@""];
+//	
+//	while ( (infoItem = [infoEnum nextObject]) ) 
+//		[infoString appendString:[infoItem md5String]];
+//	
+//	return [infoString md5String];
+//}
 
 @end		//	NSArray(PMSExtensions)
 
