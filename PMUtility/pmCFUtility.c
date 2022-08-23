@@ -11,7 +11,7 @@
 #include <sys/stat.h>
 
 // MD5 includes
-#include <openssl/evp.h>
+//#include <openssl/evp.h>
 #include <CoreServices/CoreServices.h>
 #include <CoreFoundation/CoreFoundation.h>
 #include <unistd.h>

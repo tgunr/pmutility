@@ -22,8 +22,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		75083BFD1F29251C00B9B089 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 75083BFC1F29251C00B9B089 /* libcrypto.dylib */; };
-		75083BFE1F29251C00B9B089 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 75083BFC1F29251C00B9B089 /* libcrypto.dylib */; };
 		7522193615E84F920003E5B9 /* pmNSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22B14DF29E000613F39 /* pmNSUtility.m */; };
 		7535D1D314DF240C00613F39 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7535D1D214DF240C00613F39 /* Cocoa.framework */; };
 		7535D1DD14DF240C00613F39 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7535D1DB14DF240C00613F39 /* InfoPlist.strings */; };
@@ -59,6 +57,7 @@
 		7535D22F14DF29E000613F39 /* pmCFUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22914DF29E000613F39 /* pmCFUtility.c */; };
 		7535D23014DF29E000613F39 /* pmNSUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 7535D22A14DF29E000613F39 /* pmNSUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7535D23114DF29E000613F39 /* pmNSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22B14DF29E000613F39 /* pmNSUtility.m */; };
+		753C0A4A28B4EB5600DE1D87 /* CryptoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753C0A4928B4EB5600DE1D87 /* CryptoKit.framework */; };
 		754C47E815DC2DF100316C67 /* pm.m in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22714DF29E000613F39 /* pm.m */; };
 		754C47F515DC2FA500316C67 /* pmCFUtility.c in Sources */ = {isa = PBXBuildFile; fileRef = 7535D22914DF29E000613F39 /* pmCFUtility.c */; };
 /* End PBXBuildFile section */
@@ -81,7 +80,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		75083BFC1F29251C00B9B089 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = ../../../usr/lib/libcrypto.dylib; sourceTree = "<group>"; };
 		7535D1CF14DF240C00613F39 /* PMUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PMUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7535D1D214DF240C00613F39 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7535D1D514DF240C00613F39 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -122,6 +120,7 @@
 		7535D22914DF29E000613F39 /* pmCFUtility.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pmCFUtility.c; sourceTree = "<group>"; };
 		7535D22A14DF29E000613F39 /* pmNSUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pmNSUtility.h; sourceTree = "<group>"; };
 		7535D22B14DF29E000613F39 /* pmNSUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pmNSUtility.m; sourceTree = "<group>"; };
+		753C0A4928B4EB5600DE1D87 /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = System/Library/Frameworks/CryptoKit.framework; sourceTree = SDKROOT; };
 		754C47A915DC239F00316C67 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		754C47AA15DC239F00316C67 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		754C47AB15DC239F00316C67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -134,11 +133,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753C0A4A28B4EB5600DE1D87 /* CryptoKit.framework in Frameworks */,
 				7535D1F514DF273400613F39 /* Carbon.framework in Frameworks */,
 				7535D1F614DF273400613F39 /* CoreFoundation.framework in Frameworks */,
 				7535D1F114DF273300613F39 /* Foundation.framework in Frameworks */,
 				7535D1D314DF240C00613F39 /* Cocoa.framework in Frameworks */,
-				75083BFD1F29251C00B9B089 /* libcrypto.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +145,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75083BFE1F29251C00B9B089 /* libcrypto.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +154,6 @@
 		7535D1C314DF240C00613F39 = {
 			isa = PBXGroup;
 			children = (
-				75083BFC1F29251C00B9B089 /* libcrypto.dylib */,
 				7535D1E714DF24AA00613F39 /* pmUtility.h */,
 				7535D1D814DF240C00613F39 /* PMUtility */,
 				7535D1D114DF240C00613F39 /* Frameworks */,
@@ -176,6 +173,7 @@
 		7535D1D114DF240C00613F39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				753C0A4928B4EB5600DE1D87 /* CryptoKit.framework */,
 				7535D1F214DF273300613F39 /* Carbon.framework */,
 				7535D1F314DF273300613F39 /* CoreFoundation.framework */,
 				7535D1F414DF273300613F39 /* Security.framework */,
@@ -346,11 +344,11 @@
 			};
 			buildConfigurationList = 7535D1C814DF240C00613F39 /* Build configuration list for PBXProject "PMUtility" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = en;
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
-				Base,
 			);
 			mainGroup = 7535D1C314DF240C00613F39;
 			productRefGroup = 7535D1D014DF240C00613F39 /* Products */;
@@ -438,32 +436,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -474,25 +452,17 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
 				LD_OPENMP_FLAGS = "-fopenmp";
-				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/openssl@1.1/1.1.1d/lib";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = "-lcrypto";
 				SDKROOT = macosx;
-				SYMROOT = ../build;
-				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/Cellar/openssl@1.1/1.1.1d/include";
+				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/Cellar/openssl/1.0.2k/include;
 			};
 			name = Debug;
 		};
 		7518E23315FD01B0009B9229 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -501,7 +471,6 @@
 				GCC_PREFIX_HEADER = "PMUtility/PMUtility-Prefix.pch";
 				INFOPLIST_FILE = "PMUtility/PMUtility-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.polymicrosystems.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = framework;
@@ -511,7 +480,6 @@
 		7518E23415FD01B0009B9229 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -523,7 +491,6 @@
 		7518E23515FD01B0009B9229 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -532,32 +499,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -568,18 +515,11 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
 				LD_OPENMP_FLAGS = "-fopenmp";
-				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/openssl@1.1/1.1.1d/lib";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = "-lcrypto";
 				SDKROOT = macosx;
-				SYMROOT = ../build;
-				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/Cellar/openssl@1.1/1.1.1d/include";
+				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/Cellar/openssl/1.0.2k/include;
 			};
 			name = Development;
 		};
@@ -587,53 +527,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "";
 				LD_OPENMP_FLAGS = "-fopenmp";
-				LIBRARY_SEARCH_PATHS = "/usr/local/Cellar/openssl@1.1/1.1.1d/lib";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = "-lcrypto";
 				SDKROOT = macosx;
-				SYMROOT = ../build;
-				SYSTEM_HEADER_SEARCH_PATHS = "/usr/local/Cellar/openssl@1.1/1.1.1d/include";
+				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/Cellar/openssl/1.0.2k/include;
 			};
 			name = Release;
 		};
 		7535D1E514DF240C00613F39 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -642,7 +555,6 @@
 				GCC_PREFIX_HEADER = "PMUtility/PMUtility-Prefix.pch";
 				INFOPLIST_FILE = "PMUtility/PMUtility-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.polymicrosystems.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = framework;
@@ -652,7 +564,6 @@
 		7535D1E614DF240C00613F39 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -661,7 +572,6 @@
 				GCC_PREFIX_HEADER = "PMUtility/PMUtility-Prefix.pch";
 				INFOPLIST_FILE = "PMUtility/PMUtility-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.polymicrosystems.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = framework;
@@ -671,7 +581,6 @@
 		754C47EC15DC2DF100316C67 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -683,7 +592,6 @@
 		754C47ED15DC2DF100316C67 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -695,7 +603,6 @@
 		757F4F9E15FCF709008753DA /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Development;
@@ -703,7 +610,6 @@
 		757F4F9F15FCF709008753DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
