@@ -1,1 +1,5 @@
 DerivedData
+build
+.DS_Store
+PMUtility.xcodeproj/project.xcworkspace/xcuserdata/davec.xcuserdatad/UserInterfaceState.xcuserstate
+PMUtility.xcodeproj/xcuserdata/davec.xcuserdatad/xcschemes/xcschememanagement.plist
