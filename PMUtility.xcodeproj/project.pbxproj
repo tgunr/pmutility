@@ -114,16 +114,13 @@
 		7535D20C14DF27BD00613F39 /* NSDictionary_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_Extensions.m; sourceTree = "<group>"; };
 		7535D20D14DF27BD00613F39 /* NSNumber_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NSNumber_Extensions.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		7535D20E14DF27BD00613F39 /* NSNumber_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNumber_Extensions.m; sourceTree = "<group>"; };
-		7535D22614DF29DF00613F39 /* pm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = pm.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		7535D22714DF29E000613F39 /* pm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = pm.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		7535D22614DF29DF00613F39 /* pm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = pm.h; sourceTree = "<group>"; };
+		7535D22714DF29E000613F39 /* pm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = pm.m; sourceTree = "<group>"; };
 		7535D22814DF29E000613F39 /* pmCFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pmCFUtility.h; sourceTree = "<group>"; };
 		7535D22914DF29E000613F39 /* pmCFUtility.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pmCFUtility.c; sourceTree = "<group>"; };
 		7535D22A14DF29E000613F39 /* pmNSUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pmNSUtility.h; sourceTree = "<group>"; };
 		7535D22B14DF29E000613F39 /* pmNSUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pmNSUtility.m; sourceTree = "<group>"; };
 		753C0A4928B4EB5600DE1D87 /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = System/Library/Frameworks/CryptoKit.framework; sourceTree = SDKROOT; };
-		754C47A915DC239F00316C67 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		754C47AA15DC239F00316C67 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		754C47AB15DC239F00316C67 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		754C47EE15DC2DF100316C67 /* libpmutility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpmutility.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -180,7 +177,6 @@
 				7535D1D614DF240C00613F39 /* CoreData.framework */,
 				7535D1D714DF240C00613F39 /* Foundation.framework */,
 				7535D1D214DF240C00613F39 /* Cocoa.framework */,
-				754C47A815DC239F00316C67 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -245,16 +241,6 @@
 				7535D20E14DF27BD00613F39 /* NSNumber_Extensions.m */,
 			);
 			name = Extensions;
-			sourceTree = "<group>";
-		};
-		754C47A815DC239F00316C67 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				754C47A915DC239F00316C67 /* AppKit.framework */,
-				754C47AA15DC239F00316C67 /* CoreData.framework */,
-				754C47AB15DC239F00316C67 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
