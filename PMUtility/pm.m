@@ -107,7 +107,7 @@ void pmMSG(const char *function,  int inLevel, NSString * format, ...)
     {
 		// The level is not high enough to be displayed, we're skipping this item.
 		// inLevel = 0 = disabled          PMLOG(0, @"log, but disabled");
-		// gDebugLevel = 1 = least verbose PMLOG(1, @"Routine log");
+		// gDebugLevel = 1 = least verbose PMLOG_DEBUG(@"Routine log");
 		// gDebugLevel = 7 = most verbose  PMLOG(5, @"Really detailed debug level");
         return;
     }
@@ -129,7 +129,7 @@ void pmLOG(const char *file, const char *function,  int inLevel, NSString * form
     {
 		// The level is not high enough to be displayed, we're skipping this item.
 		// inLevel = 0 = disabled          PMLOG(0, @"log, but disabled");
-		// gDebugLevel = 1 = least verbose PMLOG(1, @"Routine log");
+		// gDebugLevel = 1 = least verbose PMLOG_DEBUG(@"Routine log");
 		// gDebugLevel = 7 = most verbose  PMLOG(7, @"Really detailed debug level");
         return;
     }
