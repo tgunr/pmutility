@@ -127,16 +127,8 @@ void pmLOG(const char *file, const char *function,  int inLevel, NSString * form
 {
     if( inLevel >= gDebugLevel || inLevel == 0 )
     {
-		// The level is not high enough to be displayed, we're skipping this item.
-		// inLevel = 0 = disabled          PMLOG(0, @"log, but disabled");
-		// gDebugLevel = 1 = least verbose PMLOG_DEBUG(@"Routine log");
-		// gDebugLevel = 7 = most verbose  PMLOG(7, @"Really detailed debug level");
-        return;
-    }
-    else
-    {
         NSString *level = pmLogLevelString(inLevel);
-		NSString *pathString = @(file);
+        NSString *pathString = @(file);
         const char *fileString = [pathString.lastPathComponent cStringUsingEncoding: NSUTF8StringEncoding];
         NSString *finalFormat =  [NSString stringWithFormat:@"%@ %s: %s %@", level, fileString, function, format];
         
@@ -144,6 +136,14 @@ void pmLOG(const char *file, const char *function,  int inLevel, NSString * form
         va_start(ap, format);
         NSLogv(finalFormat, ap);
         va_end(ap);
+    }
+    else
+    {
+        // The level is not high enough to be displayed, we're skipping this item.
+        // inLevel = 0 = disabled          PMLOG(0, @"log, but disabled");
+        // gDebugLevel = 1 = least verbose PMLOG_DEBUG(@"Routine log");
+        // gDebugLevel = 7 = most verbose  PMLOG(7, @"Really detailed debug level");
+        return;
     }
 }
 
